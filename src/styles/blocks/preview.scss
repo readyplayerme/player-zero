@@ -1,0 +1,27 @@
+// @include webfont('FF', 'filename');
+
+.preview {
+	height: 100vh;
+    padding: 40px;
+
+	&__container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+	    lottie-player,
+        dotlottie-player {
+	    	width: 80%;
+	    	height: 80%;
+	    }
+	}
+}
+
+@media only screen and (max-width: $large) {
+    .preview {
+        background-color: #000;
+    }
+}

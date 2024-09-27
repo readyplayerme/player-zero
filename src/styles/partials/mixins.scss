@@ -1,0 +1,173 @@
+@mixin scrollbar($thumb: #fff, $track: transparent, $margin: 0px) {
+    scrollbar-width: thin;
+    scrollbar-color: $thumb $track;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+        border-radius: 8px;
+        margin: $margin 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $thumb;
+        border-radius: 8px;
+    }
+}
+
+// font-face example - @include webfont('FF', 'ff');
+@mixin webfont($family, $file, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('../fonts/' + $file + '.eot');
+		src: url('../fonts/' + $file + '.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/' + $file + '.woff') format('woff'),
+			 url('../fonts/' + $file + '.ttf') format('truetype'),
+			 url('../fonts/' + $file + '.svg') format('svg');
+		font-weight: $weight;
+		font-style: $style;
+		font-display: block;
+	}
+}
+
+// placeholder color
+@mixin placeholder($c) {
+	&::-webkit-input-placeholder {
+		color: $c;
+	}
+	&::-moz-placeholder {
+        color: $c;
+		opacity: 1;
+	}
+	&:-moz-placeholder {
+        color: $c;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+        color: $c;
+	}
+}
+
+// clearfix
+@mixin clearfix() {
+	&::before,
+	&::after {
+        display: block;
+		content: '';
+		height: 0;
+		overflow: hidden;
+		clear: both;
+	}
+}
+
+@mixin scrollbarClear() {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        border-radius: 0px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 0px;
+    }
+}
+
+
+//vertical stretch
+@mixin verticalStretch() {
+    display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+}
+
+// clear button
+@mixin clearButton($font) {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	font-family: $font;
+}
+
+//grid
+
+@mixin grid-container() {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 40rem;
+	max-width: 1744rem;
+}
+
+@mixin grid-row() {
+	display: flex;
+	flex-flow: row wrap;
+	margin-left: calc(-1 * var(--grid-gap));
+	margin-right: calc(-1 * var(--grid-gap));
+}
+
+@mixin grid-col($x:12, $y:12){
+	padding-right: var(--grid-gap);
+	padding-left: var(--grid-gap);
+	width: calc(($x/$y)*100%);
+}
+
+@mixin grid-offset-left($x:12, $y:12){
+	margin-left: calc(($x/$y)*100%);
+}
+
+@mixin grid-offset-right($x:12, $y:12){
+	margin-right: calc(($x/$y)*100%);
+}
+
+//fonts
+
+@mixin head {
+    font-family: $fontDrukX;
+    font-weight: 900;
+    font-size: 320rem;
+    line-height: 1;
+}
+
+@mixin h1 {
+    font-family: $fontDrukX;
+    font-weight: 900;
+    font-size: 280rem;
+    line-height: .8;
+    letter-spacing: 0.01em;
+}
+
+@mixin body {
+    font-family: $font;
+    font-weight: 400;
+    font-size: 20rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+@mixin body-m {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 24rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+@mixin body-l {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 28rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}

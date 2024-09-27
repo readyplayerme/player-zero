@@ -1,0 +1,68 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - deploy
+env:
+  ENDPOINT: https://devcloud.one/deploy/v1
+  DATA: '{"files_root": "_build", "project_name": "${{github.event.repository.name}}", "project_folder": "", "branch_full": "${{github.ref}}", "host": "178.154.225.36"}'
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create server
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "createServer"}, ${{env.DATA}}]'
+
+    - name: Add Cloudflare DNS record
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "addCloudflareRecord"}, ${{env.DATA}}]'
+
+    - name: Create project folder structure
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "createProjectFolderStructure"}, ${{env.DATA}}]'
+
+    - name: Pull updates
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "pullUpdates"}, ${{env.DATA}}]'
+
+    - name: Install dependencies
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "installDependencies"}, ${{env.DATA}}]'
+
+    # - name: Stop pm2 before building
+    #   run: |
+    #     wget --content-on-error -qO- \
+    #     ${{env.ENDPOINT}} \
+    #     --header='Content-Type:application/json' \
+    #     --post-data='[{"task": "pm2Stop"}, ${{env.DATA}}]'
+
+    - name: Build project
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "buildProject"}, ${{env.DATA}}]'
+
+    # - name: Restart pm2
+    #   run: |
+    #     wget --content-on-error -qO- \
+    #     ${{env.ENDPOINT}} \
+    #     --header='Content-Type:application/json' \
+    #     --post-data='[{"task": "pm2Restart"}, ${{env.DATA}}]'

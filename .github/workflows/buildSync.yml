@@ -1,0 +1,36 @@
+name: Build and sync 
+
+on:
+  push:
+    branches:
+      - disabled
+env:
+  USER: os_dergachevm
+  HOST: 178.154.225.36
+  PORT: 22
+  BUILD_FOLDER: /home/os_dergachevm/projects/yrusportal/v1/htdocs
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Setup key
+      - run: set -eu
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "${{secrets.EXTYL_SSH}}" > "$HOME/.ssh/key"
+      - run: chmod 600 "$HOME/.ssh/key"
+      # Build
+      - run: npm ci
+      - run: npm run build
+      - run: echo "Check folders"
+      - run: ls
+      # Deploy
+      - run: echo "Connect to ssh"
+      - run: echo ${{env.USER}}@${{env.HOST}}:${{env.PORT}}${{env.BUILD_FOLDER}}
+      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no -p ${{env.PORT}}" --archive --compress --delete . ${{env.USER}}@${{env.HOST}}:${{env.BUILD_FOLDER}}
