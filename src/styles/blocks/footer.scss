@@ -1,0 +1,82 @@
+// @include webfont('FF', 'filename');
+
+.footer {
+	&__container {
+		@include grid-container();
+	}
+
+	&__wrap {
+		padding: 100rem 0;
+	}
+
+	&__row {
+		@include grid-row();
+	}
+
+	&__col {
+		@include grid-col(3,12);
+	}
+
+	&__logos {
+		display: flex;
+		flex-direction: column;
+		gap: 12rem;
+	}
+
+	&__logo {
+		display: inline-flex;
+		color: $pink;
+
+		.svg-icon {
+			width: 150rem;
+			height: 54rem;
+		}
+
+		&--rpm {
+			gap: 12rem;
+			color: $white100;
+
+			span {
+				font-size: 16rem;
+			}
+		}
+	}
+
+	&__item {
+		margin-top: 48rem;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		@include body-m();
+		font-weight: 700;
+		transition: opacity .3s;
+	}
+
+	&__socials {
+		display: flex;
+		justify-content: flex-end;
+
+		.socials {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+    .footer {
+		&__link {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+    .footer {}
+}

@@ -27,12 +27,16 @@ $desktop = "only screen and (min-width: 1024px)"
 
 $font: 'Aeonik', Roboto, Arial, Helvetica, sans-serif;
 $fontDrukW: 'Druk Wide Web', Roboto, Arial, Helvetica, sans-serif;
-$fontDrukX: 'Druk XCond Web', Roboto, Arial, Helvetica, sans-serif;
+$fontDrukX: 'Druk XCond Trial', Roboto, Arial, Helvetica, sans-serif;
 
 //colors
 
 $black: #121214;
 $white100: #ffffff;
+$white64: rgba(#ffffff, .64);
+$pink: #E066FF;
+$violet: #6966FF;
+$yellow: #D8FF68;
 
 //media
 
@@ -46,10 +50,11 @@ $xxsmall: 460px;
 :root {
 	--scale: 1px;
 	--grid-gap: 16rem;
-	--large: 1440px;
-	--normal: 1365px;
-	--medium: 1199px;
-	--small: 1023px;
-	--xsmall: 767px;
-	--xxsmall: 460px;
+    --header-min-height: 152rem;
+}
+
+@media only screen and (max-width: $small) {
+	:root {
+		--header-min-height: 84rem;
+	}
 }

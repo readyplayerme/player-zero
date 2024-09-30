@@ -1,8 +1,0 @@
-.mission {
-	background-image: url(./assets/images/mission-line.png) 50% 0 no-repeat;
-	background-blend-mode: lighten;
-
-	&__container {
-		@include grid-container();
-	}
-}

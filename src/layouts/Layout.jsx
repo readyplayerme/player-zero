@@ -5,9 +5,9 @@ const Layout = ({ children, title, bodyClass }) => {
     return <html lang="ru">
         <head>
             <meta charset="UTF-8" />
-            {/* <meta name="description" content={title} />
+            <meta name="description" content={title} />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="apple-mobile-web-app-capable" content="yes" /> */}
+            <meta name="apple-mobile-web-app-capable" content="yes" />
 
             {/* <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> */}
            {/*  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png" />

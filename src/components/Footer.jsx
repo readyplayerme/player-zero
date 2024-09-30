@@ -4,26 +4,32 @@ const Footer = ({}) => {
 			<div class="footer__wrap">
 				<div class="footer__row">
 					<div class="footer__col">
-						<a href="" class="footer__logo">
-                            <img src="/assets/images/logo/logo-header.svg" alt="Player Zero" />
-                        </a>
+                        <div class="footer__logos">
+                            <a href="" class="footer__logo">
+                                <svg class="svg-icon" viewBox="0 0 200 72" width="150" height="54"><use xlink:href="#svg-logo"></use></svg>
+                            </a>
+
+                            <div class="footer__logo footer__logo--rpm">
+                                <span>Built by</span>
+                                <img src="/assets/images/icons/logo-rpm-white.svg" alt="Ready player me" />
+                            </div>
+                        </div>
 					</div>
 
 					<div class="footer__col">
 						<nav class="footer__menu">
                             <ul class="footer__list">
-                                <li class="footer__item"><a href="" class="footer__link"><span></span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span></span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span></span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span></span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span></span></a></li>
+                                <li class="footer__item"><a href="" class="footer__link"><span>How it Works</span></a></li>
+                                <li class="footer__item"><a href="" class="footer__link"><span>About Us</span></a></li>
+                                <li class="footer__item"><a href="" class="footer__link"><span>Terms of Use</span></a></li>
+                                <li class="footer__item"><a href="" class="footer__link"><span>Privacy Policy</span></a></li>
                             </ul>
                         </nav>
 					</div>
 
 					<div class="footer__col">
 						<div class="footer__form">
-                            <form action="" class="form">
+                            <form action="" class="form form--footer">
                                 <div class="form__box">
                                     <div class="form__field">
                                         <div class="form__title">Don’t miss our news and announcements</div>
@@ -56,24 +62,24 @@ const Footer = ({}) => {
 					<div class="footer__col">
 						<div class="footer__socials">
                             <div class="socials">
-                                <a href="" class="socials__link">
-                                    <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-x"></use></svg>
+                                <a href="" class="socials__link" target="_blank">
+                                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40" style="width: 40rem; height: 40rem;"><use xlink:href="#svg-x"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link">
-                                    <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-discord"></use></svg>
+                                <a href="" class="socials__link" target="_blank">
+                                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40" style="width: 40rem; height: 40rem;"><use xlink:href="#svg-discord"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link">
-                                    <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-instagram"></use></svg>
+                                <a href="" class="socials__link" target="_blank">
+                                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40" style="width: 40rem; height: 40rem;"><use xlink:href="#svg-instagram"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link">
-                                    <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-tiktok"></use></svg>
+                                <a href="" class="socials__link" target="_blank">
+                                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40" style="width: 40rem; height: 40rem;"><use xlink:href="#svg-tiktok"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link">
-                                    <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-arch"></use></svg>
+                                <a href="" class="socials__link" target="_blank">
+                                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40" style="width: 40rem; height: 40rem;"><use xlink:href="#svg-arch"></use></svg>
                                 </a>
                             </div>
                         </div>

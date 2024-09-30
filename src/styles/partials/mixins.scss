@@ -106,8 +106,12 @@
 @mixin grid-container() {
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 40rem;
-	max-width: 1744rem;
+	padding: 0 48rem;
+	max-width: 1760rem;
+
+    @media only screen and (max-width: $small)  {
+        padding: 0 25px;
+    }
 }
 
 @mixin grid-row() {
@@ -117,38 +121,64 @@
 	margin-right: calc(-1 * var(--grid-gap));
 }
 
-@mixin grid-col($x:12, $y:12){
+@mixin grid-col($x:12, $y:12) {
 	padding-right: var(--grid-gap);
 	padding-left: var(--grid-gap);
 	width: calc(($x/$y)*100%);
 }
 
-@mixin grid-offset-left($x:12, $y:12){
+@mixin grid-offset-left($x:12, $y:12) {
 	margin-left: calc(($x/$y)*100%);
 }
 
-@mixin grid-offset-right($x:12, $y:12){
+@mixin grid-offset-right($x:12, $y:12) {
 	margin-right: calc(($x/$y)*100%);
 }
 
 //fonts
 
-@mixin head {
-    font-family: $fontDrukX;
-    font-weight: 900;
-    font-size: 320rem;
-    line-height: 1;
-}
-
 @mixin h1 {
     font-family: $fontDrukX;
-    font-weight: 900;
-    font-size: 280rem;
-    line-height: .8;
+    font-weight: 1000;
+    font-size: 240rem;
+    line-height: .84;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $normal) {
+        font-size: 140rem;
+    }
+
+    @media only screen and (max-width: $small) {
+        font-size: 85rem;
+    }
+}
+
+@mixin h3 {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 52rem;
+    line-height: 1.2;
     letter-spacing: 0.01em;
 }
 
-@mixin body {
+@mixin h4 {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 40rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+@mixin h5 {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 28rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+@mixin body-m {
     font-family: $font;
     font-weight: 400;
     font-size: 20rem;
@@ -156,18 +186,18 @@
     letter-spacing: 0.01em;
 }
 
-@mixin body-m {
+@mixin body-l {
     font-family: $font;
-    font-weight: 700;
-    font-size: 24rem;
+    font-weight: 400;
+    font-size: 28rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
 }
 
-@mixin body-l {
+@mixin caption {
     font-family: $font;
-    font-weight: 700;
-    font-size: 28rem;
-    line-height: 1.2;
+    font-weight: 400;
+    font-size: 12rem;
+    line-height: 1.3;
     letter-spacing: 0.01em;
 }

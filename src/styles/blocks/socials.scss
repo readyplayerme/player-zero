@@ -1,0 +1,43 @@
+// @include webfont('FF', 'filename');
+
+.socials {
+	display: inline-flex;
+	gap: 32rem;
+	align-items: center;
+	justify-content: flex-end;
+
+	&__link {
+		display: block;
+		line-height: 0;
+		flex-shrink: 0;
+		transition: opacity .3s;
+
+		.svg-icon {
+			width: 40rem;
+			height: 40rem;
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	.socials {
+		&__link {
+			&:hover {
+				opacity: .7;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+    .socials {
+		gap: 14rem;
+
+		&__link {
+			.svg-icon {
+				width: 17rem;
+				height: 17rem;
+			}
+		}
+	}
+}

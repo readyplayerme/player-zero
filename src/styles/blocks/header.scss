@@ -1,0 +1,73 @@
+// @include webfont('FF', 'filename');
+
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 99;
+
+	&.is-scroll {
+		background-color: #161618E5;
+		backdrop-filter: blur(7px);
+		-webkit-backdrop-filter: blur(7px);
+	}
+
+	&__container {
+		@include grid-container();
+
+		& {
+			max-width: 100%;
+		}
+	}
+
+	&__wrap {
+		padding: 40rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		display: inline-block;
+		line-height: 0;
+		position: relative;
+		color: $pink;
+		margin-right: 24rem;
+		transition: opacity .3s;
+
+		.svg-icon {
+			width: 200rem;
+			height: 72rem;
+		}
+	}
+
+	&__socials {
+		margin-left: auto;
+	}
+}
+
+@media only screen and (hover: hover) {
+	.header {
+		&__logo {
+			&:hover {
+				opacity: .7;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+    .header {
+		&__wrap {
+			padding: 25rem 0;
+		}
+
+		&__logo {
+			.svg-icon {
+				width: 93rem;
+				height: 34rem;
+			}
+		}
+	}
+}

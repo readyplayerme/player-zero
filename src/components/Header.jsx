@@ -3,10 +3,34 @@ const Header = ({children, data}) => {
 		<div class="header__container">
 			<div class="header__wrap">
 				<a href="" class="header__logo">
-					<img src="/assets/images/logo/logo-header.svg" alt="Player Zero" />
+					<svg class="svg-icon" viewBox="0 0 200 72" width="200" height="72"><use xlink:href="#svg-logo"></use></svg>
 				</a>
 
-				<div class="header__nav">
+                <div class="header__socials">
+                    <div class="socials">
+                        <a href="" class="socials__link" target="_blank">
+                            <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-x"></use></svg>
+                        </a>
+
+                        <a href="" class="socials__link" target="_blank">
+                            <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-discord"></use></svg>
+                        </a>
+
+                        <a href="" class="socials__link" target="_blank">
+                            <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-instagram"></use></svg>
+                        </a>
+
+                        <a href="" class="socials__link" target="_blank">
+                            <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-tiktok"></use></svg>
+                        </a>
+
+                        <a href="" class="socials__link" target="_blank">
+                            <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-arch"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+				{/* <div class="header__nav">
 					<nav class="nav">
 						<ul class="nav__list">
 							<li class="nav__item">
@@ -38,13 +62,9 @@ const Header = ({children, data}) => {
                             </li>
 						</ul>
 					</nav>
-				</div>
+				</div> */}
 
-				<button class="header__burger">
-					<i></i><i></i><i></i><i></i>
-				</button>
-
-                <div class="header__countdown">
+                {/* <div class="header__countdown">
                     <div class="countdown">
                         <div class="countdown__value">02</div>
                         <div class="countdown__divider">
@@ -58,7 +78,7 @@ const Header = ({children, data}) => {
 
                         <div class="countdown__value">58</div>
                     </div>
-                </div>
+                </div> */}
 			</div>
 		</div>
 	</header>

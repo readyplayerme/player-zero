@@ -15,12 +15,13 @@ html, body {
 html {
     scroll-behavior: smooth;
     font-size: var(--scale);
+    font-size: 1px;
 }
 
 body {
     background-color: $black;
     color: $white100;
-    @include body();
+    @include body-l();
     @include scrollbar();
 }
 
@@ -56,10 +57,22 @@ h1, h2 {
     @include h1();
 }
 
+h3 {
+    @include h3();
+}
+
 ul, li {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+p {
+    margin: 0 0 32rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 img,

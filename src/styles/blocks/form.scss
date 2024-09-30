@@ -1,0 +1,109 @@
+// @include webfont('FF', 'filename');
+
+.form {
+	width: 100%;
+
+
+	&__title {
+		@include h5();
+		margin-bottom: 16rem;
+	}
+
+	&__text {
+		@include body-m();
+		color: $white64;
+	}
+
+	&__agreement {
+		@include caption();
+		margin-top: 12rem;
+		color: $white64;
+
+		a {
+			color: $white100;
+			transition: opacity .3s;
+		}
+	}
+
+	&__field {
+		margin-bottom: 24rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&--intro {
+		.form {
+			&__box {
+				width: 100%;
+				display: flex;
+				gap: 16rem;
+			}
+
+			&__field {
+				&--input {
+					flex-grow: 1;
+				}
+
+				&--button {
+					flex-shrink: 0;
+				}
+			}
+		}
+	}
+
+	&--footer {
+		.form {
+			&__input {
+				border: 2rem solid $white100;
+				font-size: 18rem;
+				padding: 13rem 16rem;
+				border-radius: 14rem;
+			}
+
+			&__button {
+				padding: 13rem 20rem;
+				font-size: 18rem;
+				font-weight: 700;
+				border-radius: 14rem;
+				min-height: 48rem;
+			}
+		}
+	}
+
+	&__input {
+		width: 100%;
+		padding: 36rem 30rem;
+		border-radius: 30rem;
+		background-color: #262631;
+		@include body-m();
+		@include placeholder($white64);
+	}
+
+	&__button {
+		padding: 32rem 30rem;
+
+		.svg-icon {
+			width: 36rem;
+			height: 32rem;
+		}
+	}
+
+}
+
+.form-message {}
+.form-success {}
+.form-response {}
+
+@media only screen and (hover: hover) {
+    .form {
+		&__agreement {
+			a {
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}
