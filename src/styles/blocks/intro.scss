@@ -1,17 +1,28 @@
 // @include webfont('FF', 'filename');
 
 .intro {
+	position: relative;
 	background: $black url(../images/intro-bg.png) 50% 0 no-repeat;
 	background-size: cover;
 	background-blend-mode: lighten;
-	position: relative;
 
-	&__bg {
+	/* &__bg {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
-	}
+		height: 100%;
+
+		img, video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover
+		}
+	} */
+
 	&__container {
 		@include grid-container();
 	}
@@ -19,6 +30,9 @@
 	&__wrap {
 		padding: 216rem 0 145rem;
 		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	&__main {
@@ -63,6 +77,34 @@
 
 @media only screen and (max-width: $small) {
 	.intro {
+		&__wrap {
+			padding: 100rem 0 32rem;
+		}
 
+		&__main {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		&__title {
+			max-width: 336rem;
+			margin-bottom: 16rem;
+			font-size: 96rem;
+			line-height: 0.8;
+		}
+
+		&__button {
+			margin-top: 32rem;
+		}
+
+		&__bottom {
+			margin-top: 32rem;
+		}
+
+		&__scroll {
+			display: none;
+		}
 	}
 }

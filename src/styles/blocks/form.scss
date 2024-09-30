@@ -3,21 +3,20 @@
 .form {
 	width: 100%;
 
-
 	&__title {
-		@include h5();
 		margin-bottom: 16rem;
+		@include h5();
 	}
 
 	&__text {
-		@include body-m();
 		color: $white64;
+		@include body-m();
 	}
 
 	&__agreement {
-		@include caption();
 		margin-top: 12rem;
 		color: $white64;
+		@include caption();
 
 		a {
 			color: $white100;
@@ -51,6 +50,14 @@
 				&--button {
 					flex-shrink: 0;
 				}
+			}
+
+			&__input {
+				box-shadow: 0rem 0rem 32rem 0rem #000000A3 inset;
+			}
+
+			&__button {
+				color: $blue;
 			}
 		}
 	}
@@ -106,6 +113,66 @@
 					opacity: 0.7;
 				}
 			}
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.form {
+		&--intro {
+			.form {
+				&__box {
+					gap: 8rem;
+				}
+
+				&__input {
+					padding: 14rem 16rem;
+					min-height: 48rem;
+				}
+
+				&__button {
+					padding: 14rem 16rem;
+					min-height: 48rem;
+				}
+			}
+		}
+
+		&--footer {
+			.form {
+				&__input {
+					padding: 11rem 16rem;
+					min-height: 48rem;
+					font-size: 16rem;
+				}
+
+				&__button {
+					width: 100%;
+					color: $black;
+				}
+			}
+		}
+
+		&__field {
+			&--controls {
+				margin-top: 32rem;
+			}
+		}
+
+		&__input {
+			border-radius: 12rem;
+		}
+
+		&__button {
+			border-radius: 12rem;
+
+			.svg-icon {
+				width: 22rem;
+				height: auto;
+			}
+		}
+
+		&__title {
+			margin-bottom: 8rem;
 		}
 	}
 }

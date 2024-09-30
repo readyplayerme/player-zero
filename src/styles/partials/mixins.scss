@@ -1,6 +1,8 @@
 @mixin scrollbar($thumb: #fff, $track: transparent, $margin: 0px) {
-    scrollbar-width: thin;
-    scrollbar-color: $thumb $track;
+    & {
+        scrollbar-width: thin;
+        scrollbar-color: $thumb $track;
+    }
 
     &::-webkit-scrollbar {
         width: 5px;
@@ -38,19 +40,22 @@
 // placeholder color
 @mixin placeholder($c) {
 	&::-webkit-input-placeholder {
-		color: $c;
-	}
-	&::-moz-placeholder {
         color: $c;
-		opacity: 1;
-	}
-	&:-moz-placeholder {
+    }
+
+    &::-moz-placeholder {
         color: $c;
-		opacity: 1;
-	}
-	&:-ms-input-placeholder {
+        opacity: 1;
+    }
+
+    &:-moz-placeholder {
         color: $c;
-	}
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $c;
+    }
 }
 
 // clearfix
@@ -66,8 +71,10 @@
 }
 
 @mixin scrollbarClear() {
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
+    & {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
 
     &::-webkit-scrollbar {
         width: 0px;
@@ -110,7 +117,7 @@
 	max-width: 1760rem;
 
     @media only screen and (max-width: $small)  {
-        padding: 0 25px;
+        padding: 0 16rem;
     }
 }
 
@@ -146,11 +153,11 @@
     text-transform: uppercase;
 
     @media only screen and (max-width: $normal) {
-        font-size: 140rem;
+
     }
 
     @media only screen and (max-width: $small) {
-        font-size: 85rem;
+        font-size: 96rem;
     }
 }
 
@@ -160,6 +167,10 @@
     font-size: 52rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
+
+    @media only screen and (max-width: $small) {
+        font-size: 20rem;
+    }
 }
 
 @mixin h4 {
@@ -168,6 +179,10 @@
     font-size: 40rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
+
+    @media only screen and (max-width: $small) {
+        font-size: 28rem;
+    }
 }
 
 @mixin h5 {
@@ -184,6 +199,10 @@
     font-size: 20rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
+
+    @media only screen and (max-width: $small) {
+        font-size: 16rem;
+    }
 }
 
 @mixin body-l {
@@ -192,6 +211,10 @@
     font-size: 28rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
+
+    @media only screen and (max-width: $small) {
+        font-size: 16rem;
+    }
 }
 
 @mixin caption {

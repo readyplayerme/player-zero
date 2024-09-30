@@ -13,7 +13,11 @@
 	}
 
 	&__block {
+		position: relative;
 		margin-top: 100rem;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 32rem;
 
 		&:first-child {
 			margin-top: 0;
@@ -27,11 +31,14 @@
 					justify-content: center;
 				}
 
-				&__col {
-					&--img {
-						position: absolute;
-						top: 0;
-						right: 0;
+				&__image {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 0;
+
+					img {
+						margin-left: auto;
 					}
 				}
 			}
@@ -39,17 +46,6 @@
 
 		&:nth-of-type(2n) {
 			.about {
-				&__row {
-					flex-direction: row-reverse;
-				}
-
-				&__col {
-					&--img {
-						@include grid-offset-right(1,12);
-						@include grid-offset-left(0,12);
-					}
-				}
-
 				&__main {
 					text-align: right;
 					align-items: flex-end;
@@ -58,29 +54,22 @@
 		}
 	}
 
-	&__row {
-		@include grid-row();
-		position: relative;
-	}
-
-	&__col {
-		@include grid-col(6,12);
-
-		&--title {
-			@include grid-offset-right(6,12);
-		}
-
-		&--img {
-			@include grid-col(5,12);
-			@include grid-offset-left(1,12);
-		}
-	}
-
 	&__title {
 		margin-bottom: 100rem;
+		width: 100%;
+	}
+
+	&__image {
+		width: calc(50% - var(--grid-gap));
+
+		img {
+			width: 100%;
+			max-width: 659rem;
+		}
 	}
 
 	&__main {
+		width: calc(50% - var(--grid-gap));
 		display: flex;
 		flex-direction: column;
 		gap: 48rem;
@@ -108,11 +97,75 @@
 			width: 100%;
 		}
 	}
-
 }
 
 @media only screen and (max-width: $small) {
     .about {
-		&__wrap {}
+		&__wrap {
+			padding: 64rem 0;
+		}
+
+		&__title {
+			margin-bottom: 0;
+			text-align: center;
+		}
+
+		&__block {
+			margin-top: 64rem;
+
+			&:first-child {
+				.about {
+					&__image {
+						position: static;
+						transform: translateY(0);
+					}
+
+					&__logo {
+						width: 200rem;
+						height: auto;
+					}
+				}
+			}
+
+			&:nth-of-type(2n) {
+				.about {
+					&__main {
+						text-align: left;
+						align-items: flex-start;
+					}
+				}
+			}
+		}
+
+		&__image {
+			width: 100%;
+
+			img {
+				margin: 0 auto;
+			}
+		}
+
+		&__main {
+			width: 100%;
+			gap: 32rem;
+		}
+
+		&__logo {
+			margin: 0 auto;
+		}
     }
+
+	.about-partners {
+		&__list {
+			justify-content: flex-start;
+		}
+	}
+}
+
+@media only screen and (max-width: $xsmall) {
+	.about-partners {
+		&__item {
+			flex-basis: calc(50% - 12rem);
+		}
+	}
 }
