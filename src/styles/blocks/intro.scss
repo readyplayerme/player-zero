@@ -1,18 +1,35 @@
 // @include webfont('FF', 'filename');
 
+@keyframes flow {
+	0% {
+		background-position: 0% 0;
+	}
+	
+	100% {
+		background-position: calc(100% - 100vw) 0;
+	}
+}
+
 .intro {
-	background: $black url(../images/intro-bg.png) 50% 0 no-repeat;
+	// background: $black url(../images/intro-bg.png) 50% 0 no-repeat;
 	background-size: cover;
 	background-blend-mode: lighten;
 	position: relative;
-
+	
 	&__bg {
+		pointer-events: none;
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		right: 0;
+		bottom: 0;
+		background: url(/assets/images/playerzero_trails_compressed.png) 0% 0 repeat-x;
+		animation: flow 3s linear infinite forwards;
 	}
+
 	&__container {
+		position: relative;
+		z-index: 1;
 		@include grid-container();
 	}
 

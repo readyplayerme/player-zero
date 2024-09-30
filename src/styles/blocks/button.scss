@@ -1,5 +1,14 @@
 // @include webfont('FF', 'filename');
 
+@keyframes rotatePlayBtn {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+
 .button {
 	@include clearButton($font);
 	display: inline-flex;
@@ -11,10 +20,11 @@
 	border-radius: 30rem;
 	@include body-m();
 	transition: opacity .3s;
-
 }
 
 .button-play {
+	overflow: hidden;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -23,12 +33,59 @@
 	aspect-ratio: 1;
 	border-radius: 50%;
 	padding: 85rem 81rem;
-	background: #2C2B5D url(../images/btn-play.png) 50% 50% no-repeat;
-	background-size: contain;
 	min-width: 267rem;
-	//color: rgba($color: #000000, $alpha: 1.0);
 	color: rgba($white100, .8);
-	transition: opacity .3s;
+	background-color: #2C2B5D;
+
+	svg {
+		position: relative;
+		z-index: 2;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		background: conic-gradient(from 180deg, #6966fe 0%, transparent 100%);
+		animation: rotatePlayBtn 2s linear infinite forwards;
+		animation-play-state: paused;
+	}
+
+	i {
+		display: block;
+		position: absolute;
+		z-index: 2;
+		top: 60%;
+		right: -40px;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+
+		// GRADIENT WITH BLUR
+		// background: radial-gradient(circle, #8A87FF -30%, #2C2B5D 65%);
+		// filter: blur(10px);
+
+		// BLUR ONLY
+		background-color: #8A87FF;
+		filter: blur(20px);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		bottom: 3px;
+		left: 3px;
+		z-index: 1;
+		background-color: #2C2B5D;
+		border-radius: 50%;
+		transition: background-color .3s;
+	}
 }
 
 @media only screen and (hover: hover) {
@@ -40,7 +97,13 @@
 
 	.button-play {
 		&:hover {
-			opacity: .7;
+			&::after {
+				background-color: #242350;
+			}
+
+			&::before {
+				animation-play-state: running;
+			}
 		}
 	}
 }

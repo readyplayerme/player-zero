@@ -79,6 +79,7 @@
 		padding: 36rem 30rem;
 		border-radius: 30rem;
 		background-color: #262631;
+		text-transform: uppercase;
 		@include body-m();
 		@include placeholder($white64);
 	}
