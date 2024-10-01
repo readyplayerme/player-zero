@@ -15,10 +15,12 @@
 	background-size: cover;
 	background-blend-mode: lighten;
 	position: relative;
+	min-height: 100vh;
 
 	video {
 		width: 100%;
-		object-fit: contain;
+		height: 100%;
+		object-fit: cover;
 	}
 	
 	&__bg {
