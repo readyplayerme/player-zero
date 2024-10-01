@@ -9,7 +9,7 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import 'dotenv/config';
 import liveReloader from './.ancros/live-reloader/server.js';
-import task, { taskDecoratorPromise } from './.ancros/utils/task-decorator.js';
+import task from './.ancros/utils/task-decorator.js';
 import chalk from 'chalk';
 import findFreePort from './.ancros/utils/find-free-port.js';
 import { renderStaticTask } from './.ancros/render.js';

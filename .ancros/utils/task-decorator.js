@@ -33,22 +33,18 @@ const taskDecorator = (name, task) => {
         // Streams
         if (t?.pipe) {
             t.on('end', (end) => {
-                // console.log('end', end);
             });
 
             t.on('data', (data) => {
-                // console.log('data', data);
             });
 
             t.on('pipe', (pipe) => {
-                // console.log('pipe', pipe);
                 finish(name, startTime);
                 done();
             });
 
             t.on('close', (close) => {
-                // console.log('close', name, close);
-                finish(name, startTime);
+                // finish(name, startTime);
                 done();
             });
 
@@ -59,7 +55,6 @@ const taskDecorator = (name, task) => {
             });
 
             t.on('finish', async (f) => {
-                // console.log('finish', name, f);
                 finish(name, startTime);
                 done();
             });
@@ -77,89 +72,4 @@ const taskDecorator = (name, task) => {
     }
 }
 
-const taskDecoratorPromise = (name, task) => {
-    return async (done) => {
-        const startTime = performance.now();
-
-        start(name);
-        console.log('task ' + name, task);
-        const t = await task(done);
-        console.log('task', task);
-
-        /* return t?.on('finish', () => {
-                finish(name, startTime);
-                done();
-            }); */
-
-        finish(name, startTime);
-
-        return done;
-        /*
-        start(name);
-
-        const t = task(() => {
-            finish(name, startTime);
-            done();
-        });
-
-        t?.pipe && t.on('error', (err) => {
-            console.log('PIPE', err);
-            finish(name, startTime);
-            done();
-        });
-
-        t?.pipe && t.on('finish', () => {
-            finish(name, startTime);
-            done();
-        });
-
-        t?.then && t.then(() => {
-            finish(name, startTime);
-            done();
-        })
-
-        t?.catch && t.catch((err) => {
-            console.log('CATCH', err);
-            finish(name, startTime);
-            done();
-        }) */
-    }
-}
-
 export default taskDecorator;
-export {
-    taskDecoratorPromise
-};
-
-
-/* const dots = {
-    current: 0,
-    interval: 80,
-    frames: [
-      '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'
-    ]
-}
-
-function loadingAnimation(
-    text = "test",
-    // chars = ["⠙", "⠘", "⠰", "⠴", "⠤", "⠦", "⠆", "⠃", "⠋", "⠉"],
-    chars = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'],
-    delay = 100
-) {
-    let x = 0;
-
-    return setInterval(function() {
-        process.stdout.write("\r" + chars[x++] + " " + text);
-        x = x % chars.length;
-    }, delay);
-}
-
-const spin = (message) => {
-    process.stdout.write(dots.frames[dots.current % 10] + ' ' + message);
-    process.stdout.clearLine(0);
-    process.stdout.cursorTo(0);
-    process.stdout.write(""); // end the line
-}
-loadingAnimation();
-
- */
