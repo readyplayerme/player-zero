@@ -7,6 +7,27 @@ export default async ({ data }) => {
     // const apiResponse = await fetch(process.env.URL + '/api/200.json').then(r => r.json()).catch(e => e.message);
     // console.log('In JSX fetch inside component happens on component request', apiResponse);
     return <Layout title="Player Zero">
+
+        <div class="cookies" data-elt="cookies">
+            <button class="cookies__close" data-elt="closeCookies">
+                <svg class="svg-icon" viewBox="0 0 40 40" width="24" height="24"><use xlink:href="#svg-close"></use></svg>
+            </button>
+
+            <div class="cookies__wrap">
+                <div class="cookies__icon">
+                    <img src="/assets/images/cookies.png" alt="" />
+                </div>
+
+                <div class="cookies__main">
+                    <h5 class="cookies__title">This site uses cookies</h5>
+
+                    <div class="cookies__text">By continuing to browse the site, you are agreeing to our use of <a href="https://readyplayer.me/cookies" target='_blank'>cookies</a></div>
+                </div>
+
+                <button class="cookies__button button" data-elt="acceptCookies">Got it!</button>
+            </div>
+        </div>
+
         <div class="wrapper">
             {/* <div class="preloader">
                 <div class="preloader__progress"><span></span></div>
@@ -75,7 +96,7 @@ export default async ({ data }) => {
                                 <svg class="svg-icon" viewBox="0 0 200 72" width="400" height="144"><use xlink:href="#svg-logo"></use></svg>
                             </div>
 
-                            <div className="homepage__text">
+                            <div class="homepage__text">
                                 <p>PlayerZero is the avatar collectible platform of the future, empowering users to create, customize, and evolve their digital identities across virtual worlds and games.</p>
                                 <p>Built by Ready Player Me — a platform trusted by over 4,000 developers and millions of users globally — PlayerZero breaks the barriers of closed ecosystems, offering avatars that are seamlessly interoperable between platforms, true ownership of your online identity, and utility from day one.</p>
                             </div>

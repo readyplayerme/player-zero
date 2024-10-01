@@ -2,6 +2,7 @@ import createDOM from './app/utils/createDOM';
 import Popup from './app/Popup';
 import FormFactory, { formDataToObject } from './app/Form.js';
 import HeaderToggle from './app/HeaderToggle';
+import Cookies from 'js-cookie';
 
 class App {
     constructor() {
@@ -31,13 +32,45 @@ class App {
 			}
 		}]);
 
+        this.cookiesController();
+
         this.init();
 		this.addEvents();
     }
 
+    cookiesController = () => {
+		const state = +Cookies.get('cookiesAccepted');
+
+		if (!this.DOM.cookies || state === 1) {
+            console.log('this.DOM.cookies', this.DOM.cookies);
+			return;
+		}
+
+		this.DOM.cookies.classList.add('is-open');
+
+		this.DOM.acceptCookies?.addEventListener('click', (event) => {
+			let date = new Date();
+
+			Cookies.set('cookiesAccepted', 1, {
+				expires: new Date(date.setDate(date.getDate() + 30))
+			});
+
+			this.DOM.cookies.classList.remove('is-open');
+			//event.preventDefault();
+			return false;
+		});
+
+		this.DOM.closeCookies?.addEventListener('click', (event) => {
+			//Cookies.set('cookiesAccepted', 1);
+			//event.preventDefault();
+			this.DOM.cookies.classList.remove('is-open');
+			return false;
+		});
+	}
+
     init = () => {
-        this.setVh();
-		this.setBaseFontSize();
+        /* this.setVh();
+		this.setBaseFontSize(); */
 
 		setTimeout(() => {
             this.setHeaderScrollClass(this.scroll);
