@@ -16,10 +16,10 @@ export default async ({ data }) => {
 
             <main class="main">
                 <section class="intro">
-                    {/* <div class="intro__bg">
+                    <div class="intro__bg">
                         <video muted loop playsinline autoplay src="/assets/images/intro-video.mp4" type="video/mp4"></video>
-                        <img src="/assets/images/intro-bg.png" alt="" />
-                    </div> */}
+                        {/* <img src="/assets/images/intro-bg.png" alt="" /> */}
+                    </div>
 
                     <div class="intro__container">
                         <div class="intro__wrap">
@@ -32,9 +32,9 @@ export default async ({ data }) => {
 
                                 <div class="intro__button">
                                     <button class="button-play">
-                                        /* <i></i>
+                                        <i></i>
                                         <svg class="svg-icon" viewBox="0 0 105 43" width="105" height="43" style="width: 105rem; height: 43rem;"><use xlink:href="#svg-play-icon"></use></svg>
-                                        <svg class="svg-icon" viewBox="0 0 101 38" width="101" height="38" style="width: 101rem; height: 38rem;"><use xlink:href="#svg-play-text"></use></svg> */
+                                        <svg class="svg-icon" viewBox="0 0 101 38" width="101" height="38" style="width: 101rem; height: 38rem;"><use xlink:href="#svg-play-text"></use></svg>
 {/* 
                                         <svg class="svg-icon svg-icon--icon" viewBox="0 0 105 43" width="105" height="43"><use xlink:href="#svg-play-icon"></use></svg>
                                         <svg class="svg-icon svg-icon--text" viewBox="0 0 101 38" width="101" height="38"><use xlink:href="#svg-play-text"></use></svg>
