@@ -11,7 +11,7 @@ class HeaderToggle {
 
 		this.header 	= Array.isArray(header) ? header : [header];
 
-		console.log('this.header', this.header);
+		//console.log('this.header', this.header);
 
 		this.toggleClassName = toggleClassName;
 		this.offset 	= offset;
