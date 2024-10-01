@@ -49,6 +49,8 @@ const Layout = ({ children, title, bodyClass }) => {
                 `}>
             </style> */}
 
+            <script src="/assets/js/head.js"></script>
+
         </head>
         <body data-elt="body" class={bodyClass}>
             <SvgIcons />
