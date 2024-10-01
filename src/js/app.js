@@ -36,6 +36,10 @@ class App {
     init = () => {
         this.setVh();
 		this.setBaseFontSize();
+
+		setTimeout(() => {
+            this.setHeaderScrollClass(this.scroll);
+        }, 50);
     }
 
     addEvents = () => {
