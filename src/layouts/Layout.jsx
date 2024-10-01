@@ -34,6 +34,7 @@ const Layout = ({ children, title, bodyClass }) => {
             <title>{title}</title>
 
             <link href="/assets/styles/styles.css" rel="stylesheet" />
+            <script src="/assets/js/head.js"></script>
         </head>
         <body data-elt="body" class={bodyClass}>
             <SvgIcons />

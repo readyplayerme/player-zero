@@ -15,7 +15,7 @@
 	background-size: cover;
 	background-blend-mode: lighten;
 	position: relative;
-	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh)* 100);
 
 	video {
 		width: 100%;
@@ -52,7 +52,7 @@
 
 	&__wrap {
 		padding: 216rem 0 145rem;
-		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh)* 100);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
