@@ -2,7 +2,7 @@
 import SvgIcons from '../components/SvgIcons.jsx';
 
 const Layout = ({ children, title, bodyClass }) => {
-    return <html lang="ru">
+    return <html lang="en">
         <head>
             <meta charset="UTF-8" />
             <meta name="description" content={title} />
@@ -31,24 +31,9 @@ const Layout = ({ children, title, bodyClass }) => {
             <meta name="msapplication-wide310x150logo" content="/favicons/mstile-310x150.png" />
             <meta name="msapplication-square310x310logo" content="/favicons/mstile-310x310.png" /> */}
 
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-
-            <meta name="generator" content='Ancros dev kit' />
             <title>{title}</title>
+
             <link href="/assets/styles/styles.css" rel="stylesheet" />
-
-            {/* <style __html={`
-                    body {
-                        font-family: Arial, Helvetica, sans-serif;
-                        color: #fff;
-                        background-color: #0f101c;
-                        padding: 140px 80px;
-                    }
-                `}>
-            </style> */}
-
         </head>
         <body data-elt="body" class={bodyClass}>
             <SvgIcons />
