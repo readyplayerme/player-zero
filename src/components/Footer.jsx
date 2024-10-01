@@ -6,9 +6,7 @@ const Footer = ({}) => {
 					<div class="footer__col">
                         <div class="footer__logos">
                             <a href="" class="footer__logo">
-                                <div>
-                                    <svg class="svg-icon" viewBox="0 0 200 72" width="150" height="54"><use xlink:href="#svg-logo"></use></svg>
-                                </div>
+                                <svg class="svg-icon" viewBox="0 0 200 72" width="150" height="54"><use xlink:href="#svg-logo"></use></svg>
                             </a>
 
                             <div class="footer__logo footer__logo--rpm">
