@@ -7,12 +7,17 @@ const Footer = ({}) => {
                         <div class="footer__logos">
                             <a href="" class="footer__logo footer__logo--pz">
                                 <svg class="svg-icon" viewBox="0 0 200 72" width="150" height="54"><use xlink:href="#svg-logo"></use></svg>
+                                <span>by Ready Player Me</span>
                             </a>
+ 
+                            {/* <div class="footer__logo-text">
+                                <span>by Ready Player Me</span>
+                            </div> */}
 
-                            <a href="" class="footer__logo footer__logo--rpm">
+                            {/* <a href="" class="footer__logo footer__logo--rpm">
                                 <span>Built by</span>
                                 <img src="/assets/images/icons/logo-rpm-white.svg" alt="Ready player me" />
-                            </a>
+                            </a> */}
                         </div>
 					</div>
 
