@@ -1,5 +1,5 @@
 const Header = ({children, data}) => {
-	return <header class="header" data-elt="header">
+	return <header class="header is-active" data-elt="header">
 		<div class="header__container">
 			<div class="header__wrap">
 				<a href="" class="header__logo">
@@ -8,19 +8,19 @@ const Header = ({children, data}) => {
 
                 <div class="header__socials">
                     <div class="socials">
-                        <a href="https://doka.guide/css/grid-guide/" class="socials__link" target="_blank">
+                        <a href="https://x.com/weareplayerzero" class="socials__link" target="_blank">
                             <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-x"></use></svg>
                         </a>
 
-                        <a href="" class="socials__link" target="_blank">
+                        <a href="https://discord.gg/weareplayerzero" class="socials__link" target="_blank">
                             <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-discord"></use></svg>
                         </a>
 
-                        <a href="" class="socials__link" target="_blank">
+                        <a href="https://www.instagram.com/weareplayerzero" class="socials__link" target="_blank">
                             <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-instagram"></use></svg>
                         </a>
 
-                        <a href="" class="socials__link" target="_blank">
+                        <a href="https://www.tiktok.com/@weareplayerzero" class="socials__link" target="_blank">
                             <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-tiktok"></use></svg>
                         </a>
 

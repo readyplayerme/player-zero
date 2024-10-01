@@ -179,7 +179,7 @@ export default async ({ data }) => {
                                 <div class="process__item">
                                     <div class="process-card">
                                         <div class="process-card__img">
-                                            <img src="" alt="" />
+                                            <img src="/assets/images/process/03.png" alt="" />
                                         </div>
 
                                         <div class="process-card__content">
