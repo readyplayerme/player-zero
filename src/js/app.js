@@ -1,3 +1,107 @@
+import createDOM from './app/utils/createDOM';
+import Popup from './app/Popup';
+/* import FormFactory, { formDataToObject } from './app/Form.js'; */
+
+class App {
+    constructor() {
+        this.DOM = createDOM();
+        this.body = this.DOM.body;
+        this.scroll = window.scrollY;
+        this.vh = 0;
+
+        this.popup = new Popup(this.DOM);
+
+        /* this.forms = FormFactory([{
+			form: '#subscribe-into',
+			constraints: {
+				email: {
+					presence: true,
+					email: true
+				}
+			}
+		}, {
+            form: '#subscribe-footer',
+			constraints: {
+				email: {
+					presence: true,
+					email: true
+				}
+			}
+		}]); */
+
+        this.init();
+		this.addEvents();
+    }
+
+    init = () => {
+        this.setVh();
+		this.setBaseFontSize();
+    }
+
+    addEvents = () => {
+		document.addEventListener('click', this.handleDocumentClick);
+		window.addEventListener('resize', this.handleResizeEvent);
+		window.addEventListener('load', this.handleLoadEvent);
+		window.addEventListener('scroll', this.handleScrollEvent, { passive: true });
+
+        this.DOM.scrollLink?.forEach((el, i) => {
+			el.addEventListener('click', (e) => {
+				let link = el.getAttribute('href');
+
+				if (link.includes('/') && link.includes('#')) {}
+
+				if (link.includes('#')) {
+					e.preventDefault();
+					this.smoothScroll(el);
+					return false;
+				}
+			});
+		});
+    }
+
+    handleScrollEvent = (e) => {
+        this.scroll = window.scrollY;
+
+        setTimeout(() => {
+            this.setHeaderScrollClass(this.scroll);
+        }, 100);
+    }
+
+    handleResizeEvent = (e) => {
+		this.setVh();
+		this.setBaseFontSize();
+    }
+
+    handleLoadEvent = (e) => {
+		this.body.classList.add('is-init');
+    }
+
+    setVh() {
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	}
+
+	smoothScroll = (link) => {
+		let targetId = link.getAttribute('href');
+
+		const elt = document.querySelector(targetId.replace(/\//g, ''));
+
+		elt?.scrollIntoView({ block: "start", behavior: "smooth" });
+	}
+
+	setBaseFontSize = () => {
+		let baseFontSize = Math.max(window.innerWidth / 1920, 1);
+		document.documentElement.style.setProperty('--scale', `${baseFontSize}px`);
+	}
+
+    setHeaderScrollClass = (scroll) => {
+        let offset = 0;
+        this.DOM.header.classList.toggle('is-scroll', scroll > offset);
+    }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     console.log('app inited');
+
+    new App();
 })

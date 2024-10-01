@@ -19,8 +19,8 @@ const Footer = ({}) => {
 					<div class="footer__col">
 						<nav class="footer__menu">
                             <ul class="footer__list">
-                                <li class="footer__item"><a href="" class="footer__link"><span>How it Works</span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span>About Us</span></a></li>
+                                <li class="footer__item"><a href="#process" class="footer__link" data-elts="scrollLink"><span>How it Works</span></a></li>
+                                <li class="footer__item"><a href="#about" class="footer__link" data-elts="scrollLink"><span>About Us</span></a></li>
                                 <li class="footer__item"><a href="" class="footer__link"><span>Terms of Use</span></a></li>
                                 <li class="footer__item"><a href="" class="footer__link"><span>Privacy Policy</span></a></li>
                             </ul>
@@ -29,7 +29,7 @@ const Footer = ({}) => {
 
 					<div class="footer__col">
 						<div class="footer__form">
-                            <form action="" class="form form--footer">
+                            <form action="" class="form form--footer" id="subscribe-footer">
                                 <div class="form__box">
                                     <div class="form__field">
                                         <div class="form__title">Don’t miss our news and announcements</div>

@@ -1,0 +1,7 @@
+body {
+	&.is-init {
+		.popup {
+			display: flex;
+		}
+	}
+}

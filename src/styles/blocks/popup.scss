@@ -1,11 +1,78 @@
 // @include webfont('FF', 'filename');
 
 .popup {
+	display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	padding: 80rem;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    transition: visibility 0s .1s, opacity .1s;
 
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__box {
+		position: relative;
+		width: 100%;
+		max-width: 1470rem;
+		margin: auto;
+		height: 100%;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: -60rem;
+		width: 40rem;
+		height: 40rem;
+		display: flex;
+		color: $violet;
+		transition: color 0.3s;
+	}
+
+	&__main {
+		height: 100%;
+	}
+
+	&__video {
+		height: 100%;
+	}
+}
+
+@media only screen and (hover: hover) {
+	.popup {
+		&__close {
+			&:hover {
+				color: $white100;
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: $small) {
 	.popup {
-		
+		padding: 40rem 16rem;
+
+		&__close {
+			right: 0;
+			top: -30rem;
+			width: 24rem;
+			height: 24rem;
+
+			.svg-icon {
+				width: 24rem;
+				height: auto;
+			}
+		}
 	}
 }

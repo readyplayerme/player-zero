@@ -48,12 +48,13 @@ const Layout = ({ children, title, bodyClass }) => {
                     }
                 `}>
             </style> */}
+
         </head>
-        <body class={bodyClass}>
+        <body data-elt="body" class={bodyClass}>
             <SvgIcons />
             {children}
 
-            {/* <script src="/assets/js/app.js"></script> */}
+            <script src="/assets/js/app.js"></script>
         </body>
     </html>
 };

@@ -54,6 +54,7 @@
 
 			&__input {
 				box-shadow: 0rem 0rem 32rem 0rem #000000A3 inset;
+				text-transform: uppercase;
 			}
 
 			&__button {
@@ -86,7 +87,6 @@
 		padding: 36rem 30rem;
 		border-radius: 30rem;
 		background-color: #262631;
-		text-transform: uppercase;
 		@include body-m();
 		@include placeholder($white64);
 	}

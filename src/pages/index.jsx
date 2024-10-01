@@ -31,21 +31,17 @@ export default async ({ data }) => {
                                 </div>
 
                                 <div class="intro__button">
-                                    <button class="button-play">
+                                    <button class="button-play" data-elts="popupBtn" data-popup="video">
                                         <i></i>
-                                        <svg class="svg-icon" viewBox="0 0 105 43" width="105" height="43" style="width: 105rem; height: 43rem;"><use xlink:href="#svg-play-icon"></use></svg>
-                                        <svg class="svg-icon" viewBox="0 0 101 38" width="101" height="38" style="width: 101rem; height: 38rem;"><use xlink:href="#svg-play-text"></use></svg>
-{/* 
                                         <svg class="svg-icon svg-icon--icon" viewBox="0 0 105 43" width="105" height="43"><use xlink:href="#svg-play-icon"></use></svg>
                                         <svg class="svg-icon svg-icon--text" viewBox="0 0 101 38" width="101" height="38"><use xlink:href="#svg-play-text"></use></svg>
-*/}
                                     </button>
                                 </div>
                             </div>
 
                             <div class="intro__bottom">
                                 <div class="intro__form">
-                                    <form action="" class="form form--intro">
+                                    <form action="" class="form form--intro" id="subscribe-intro">
                                         <div class="form__box">
                                             <div class="form__field form__field--input">
                                                 <input type="mail" class="form__input" placeholder='YOUR E-MAIL'/>
@@ -118,7 +114,7 @@ export default async ({ data }) => {
                     </div>
                 </section>
 
-                <section class="process">
+                <section class="process" id="process">
                     <div class="process__container">
                         <div class="process__wrap">
                             <h2 class="process__title">how it works</h2>
@@ -223,7 +219,7 @@ export default async ({ data }) => {
                     </div>
                 </section>
 
-                <section class="about">
+                <section class="about" id="about">
                     <div class="about__container">
                         <div class="about__wrap">
                             <div class="about__block">
@@ -305,22 +301,22 @@ export default async ({ data }) => {
             <Footer />
         </div>
 
-        {/* <div class="popup">
+        <div class="popup" data-elts="popup" data-popup="video">
             <div class="popup__box">
-                <button class="popup__close">
-                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40" style="width: 40rem; height: 40rem;"><use xlink:href="#svg-close"></use></svg>
+                <button class="popup__close" data-elts="closePopup">
+                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-close"></use></svg>
                 </button>
 
                 <div class="popup__main">
                     <div class="popup__video">
                         <div class="video">
-                            <video src=""></video>
+                            <video muted loop playsinline controls src="/assets/images/intro-video.mp4" type="video/mp4"></video>
                             <button class="video__button"></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> */}
+        </div>
 
     </Layout>
 }
