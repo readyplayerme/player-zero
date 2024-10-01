@@ -36,6 +36,9 @@
 	&__wrap {
 		padding: 216rem 0 145rem;
 		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	&__main {
@@ -80,6 +83,34 @@
 
 @media only screen and (max-width: $small) {
 	.intro {
+		&__wrap {
+			padding: 100rem 0 32rem;
+		}
 
+		&__main {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		&__title {
+			max-width: 336rem;
+			margin-bottom: 16rem;
+			font-size: 96rem;
+			line-height: 0.8;
+		}
+
+		&__button {
+			margin-top: 32rem;
+		}
+
+		&__bottom {
+			margin-top: 32rem;
+		}
+
+		&__scroll {
+			display: none;
+		}
 	}
 }

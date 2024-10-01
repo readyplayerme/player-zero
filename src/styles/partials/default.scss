@@ -80,3 +80,9 @@ video {
     display: block;
     max-width: 100%;
 }
+
+@media only screen and (max-width: $small) {
+    p {
+        margin: 0 0 16rem;
+    }
+}
