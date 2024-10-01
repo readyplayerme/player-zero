@@ -2,6 +2,7 @@
 
 .form {
 	width: 100%;
+	position: relative;
 
 	&.is-loading {
 		opacity: 0.7;
@@ -30,6 +31,7 @@
 	}
 
 	&__field {
+		position: relative;
 		margin-bottom: 24rem;
 
 		&:last-child {
@@ -65,6 +67,14 @@
 			&__button {
 				color: $blue;
 			}
+		}
+
+		.form-message,
+		.form-success,
+		.form-response {
+			position: absolute;
+			left: 0;
+			top: 100%;
 		}
 	}
 
@@ -111,18 +121,30 @@
 	margin-top: 10rem;
 	font-size: 14rem;
 	color: #f33;
+
+	&:empty {
+		margin-top: 0;
+	}
 }
 
 .form-success {
 	margin-top: 10rem;
 	font-size: 14rem;
 	color: #D8FF68;
+
+	&:empty {
+		margin-top: 0;
+	}
 }
 
 .form-response {
 	margin-top: 10rem;
 	font-size: 14rem;
 	color: #D8FF68;
+
+	&:empty {
+		margin-top: 0;
+	}
 }
 
 @media only screen and (hover: hover) {

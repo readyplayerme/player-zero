@@ -1,6 +1,7 @@
 import createDOM from './app/utils/createDOM';
 import Popup from './app/Popup';
 import FormFactory, { formDataToObject } from './app/Form.js';
+import HeaderToggle from './app/HeaderToggle';
 
 class App {
     constructor() {
@@ -10,6 +11,7 @@ class App {
         this.vh = 0;
 
         this.popup = new Popup(this.DOM);
+        this.headerToggle = new HeaderToggle(this.DOM.header);
 
         this.forms = FormFactory([{
 			form: '#subscribe-intro',
@@ -65,6 +67,7 @@ class App {
 
     handleScrollEvent = (e) => {
         this.scroll = window.scrollY;
+        this.headerToggle.toggle(this.scroll);
 
         setTimeout(() => {
             this.setHeaderScrollClass(this.scroll);
