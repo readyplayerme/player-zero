@@ -18,14 +18,13 @@ export default async ({ data }) => {
                 <section class="intro">
                     <div class="intro__bg">
                         <video muted loop playsinline autoplay src="/assets/images/intro-video.mp4" type="video/mp4"></video>
-                        {/* <img src="/assets/images/intro-bg.png" alt="" /> */}
                     </div>
 
                     <div class="intro__container">
                         <div class="intro__wrap">
                             <div class="intro__main">
                                 <div class="intro__content">
-                                    <h1 class="intro__title">AVATAR  COLLECTIBLE <br/>PLATFORM</h1>
+                                    <h1 class="intro__title">AVATAR COLLECTIBLE <br/>PLATFORM</h1>
                                     <h3 class="intro__subtitle">Bringing Your Identity <br/>
                                     to Every World</h3>
                                 </div>
@@ -41,23 +40,22 @@ export default async ({ data }) => {
 
                             <div class="intro__bottom">
                                 <div class="intro__form">
-                                    <form action="" class="form form--intro" id="subscribe-intro">
+                                    <form class="form form--intro" id="subscribe-intro">
                                         <div class="form__box">
-                                            <div class="form__field form__field--input">
-                                                <input type="mail" class="form__input" placeholder='YOUR E-MAIL'/>
-
-                                                <div class="form-message"></div>
+                                            <div class="form__field form__field--input" data-input="email">
+                                                <input type="text" name="email" class="form__input" placeholder="YOUR E-MAIL"/>
+                                                <div class="form-message" data-error="email"></div>
                                             </div>
 
                                             <div class="form__field form__field--button">
-                                                <button class="form__button button" type='submit'>
+                                                <button class="form__button button" type="submit">
                                                     <svg class="svg-icon" viewBox="0 0 36 32" width="36" height="32"><use xlink:href="#svg-angle-right"></use></svg>
                                                 </button>
                                             </div>
                                         </div>
 
                                         <div class="form-success"></div>
-                                        <div class="form-response"></div>
+                                        <div class="form-response" data-form-response></div>
                                     </form>
                                 </div>
 

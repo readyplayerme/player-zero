@@ -3,6 +3,11 @@
 .form {
 	width: 100%;
 
+	&.is-loading {
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
 	&__title {
 		margin-bottom: 16rem;
 		@include h5();
@@ -102,9 +107,23 @@
 
 }
 
-.form-message {}
-.form-success {}
-.form-response {}
+.form-message {
+	margin-top: 10rem;
+	font-size: 14rem;
+	color: #f33;
+}
+
+.form-success {
+	margin-top: 10rem;
+	font-size: 14rem;
+	color: #D8FF68;
+}
+
+.form-response {
+	margin-top: 10rem;
+	font-size: 14rem;
+	color: #D8FF68;
+}
 
 @media only screen and (hover: hover) {
     .form {

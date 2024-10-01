@@ -29,18 +29,16 @@ const Footer = ({}) => {
 
 					<div class="footer__col">
 						<div class="footer__form">
-                            <form action="" class="form form--footer" id="subscribe-footer">
+                            <form class="form form--footer" id="subscribe-footer">
                                 <div class="form__box">
                                     <div class="form__field">
                                         <div class="form__title">Don’t miss our news and announcements</div>
-
                                         <div class="form__text">Subscribe and get all the info about Player Zero soon</div>
                                     </div>
 
-                                    <div class="form__field">
-                                        <input type="mail" class="form__input" placeholder='Your e-mail'/>
-
-                                        <div class="form-message"></div>
+                                    <div class="form__field" data-input="email">
+                                        <input name="email" type="text" class="form__input" placeholder="Your e-mail"/>
+                                        <div class="form-message" data-error></div>
 
                                         <div class="form__agreement">
                                             By subscribing you are accepting to receive marketing information from Player Zero and agree to the terms of our <a href="">Privacy Policy</a>
@@ -53,7 +51,7 @@ const Footer = ({}) => {
                                 </div>
 
                                 <div class="form-success"></div>
-                                <div class="form-response"></div>
+                                <div class="form-response" data-form-response></div>
                             </form>
                         </div>
 

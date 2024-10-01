@@ -1,6 +1,6 @@
 import createDOM from './app/utils/createDOM';
 import Popup from './app/Popup';
-/* import FormFactory, { formDataToObject } from './app/Form.js'; */
+import FormFactory, { formDataToObject } from './app/Form.js';
 
 class App {
     constructor() {
@@ -11,8 +11,8 @@ class App {
 
         this.popup = new Popup(this.DOM);
 
-        /* this.forms = FormFactory([{
-			form: '#subscribe-into',
+        this.forms = FormFactory([{
+			form: '#subscribe-intro',
 			constraints: {
 				email: {
 					presence: true,
@@ -27,7 +27,7 @@ class App {
 					email: true
 				}
 			}
-		}]); */
+		}]);
 
         this.init();
 		this.addEvents();
@@ -101,7 +101,5 @@ class App {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    console.log('app inited');
-
     new App();
 })
