@@ -7,6 +7,27 @@ export default async ({ data }) => {
     // const apiResponse = await fetch(process.env.URL + '/api/200.json').then(r => r.json()).catch(e => e.message);
     // console.log('In JSX fetch inside component happens on component request', apiResponse);
     return <Layout title="Player Zero">
+
+        <div class="cookies" data-elt="cookies">
+            <button class="cookies__close" data-elt="closeCookies">
+                <svg class="svg-icon" viewBox="0 0 40 40" width="24" height="24"><use xlink:href="#svg-close"></use></svg>
+            </button>
+
+            <div class="cookies__wrap">
+                <div class="cookies__icon">
+                    <img src="/assets/images/cookies.png" alt="" />
+                </div>
+
+                <div class="cookies__main">
+                    <h5 class="cookies__title">This site uses cookies</h5>
+
+                    <div class="cookies__text">By continuing to browse the site, you are agreeing to our use of <a href="https://readyplayer.me/cookies" target='_blank'>cookies</a></div>
+                </div>
+
+                <button class="cookies__button button" data-elt="acceptCookies">Got it!</button>
+            </div>
+        </div>
+
         <div class="wrapper">
             {/* <div class="preloader">
                 <div class="preloader__progress"><span></span></div>
@@ -75,7 +96,7 @@ export default async ({ data }) => {
                                 <svg class="svg-icon" viewBox="0 0 200 72" width="400" height="144"><use xlink:href="#svg-logo"></use></svg>
                             </div>
 
-                            <div className="homepage__text">
+                            <div class="homepage__text">
                                 <p>PlayerZero is the avatar collectible platform of the future, empowering users to create, customize, and evolve their digital identities across virtual worlds and games.</p>
                                 <p>Built by Ready Player Me — a platform trusted by over 4,000 developers and millions of users globally — PlayerZero breaks the barriers of closed ecosystems, offering avatars that are seamlessly interoperable between platforms, true ownership of your online identity, and utility from day one.</p>
                             </div>
@@ -83,31 +104,6 @@ export default async ({ data }) => {
                             <div class="homepage__image">
                                 <img src="/assets/images/homepage-bg.png" alt="" />
                             </div>
-                            {/* <div class="homepage__list">
-                                <div class="homepage__item homepage__item--img">
-                                    <div class="homepage__image homepage__image--left">
-                                        <img class="homepage__image-img" src="/assets/images/girl.png" alt="" />
-                                        <img class="homepage__image-line" src="/assets/images/hp-line.png" alt="" />
-                                        <div class="hompage__light"></div>
-                                    </div>
-                                </div>
-
-                                <div class="homepage__item homepage__item--text">
-                                    <div class="homepage__text">PlayerZero is the avatar collectible platform of the future, empowering users to create, customize, and evolve their digital identities across virtual worlds and games.</div>
-                                </div>
-
-                                <div class="homepage__item homepage__item--img">
-                                    <div class="homepage__image homepage__image--right">
-                                        <img class="homepage__image-img" src="/assets/images/man.png" alt="" />
-                                        <img class="homepage__image-line" src="/assets/images/hp-line.png" alt="" />
-                                        <div class="hompage__light"></div>
-                                    </div>
-                                </div>
-
-                                <div class="homepage__item homepage__item--text">
-                                    <div class="homepage__text">Built by Ready Player Me — a platform trusted by over 4,000 developers and millions of users globally — PlayerZero breaks the barriers of closed ecosystems, offering avatars that are seamlessly interoperable between platforms, true ownership of your online identity, and utility from day one.</div>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </section>
@@ -160,7 +156,7 @@ export default async ({ data }) => {
                                 <div class="process__item">
                                     <div class="process-card">
                                         <div class="process-card__img">
-                                            <img src="/assets/images/process/02.png" alt="" />
+                                            <video muted loop playsinline autoplay src="/assets/images/process/PlayerZero_CompanionMedia1.mp4" type="video/mp4"></video>
                                         </div>
 
                                         <div class="process-card__content">
@@ -179,7 +175,7 @@ export default async ({ data }) => {
                                 <div class="process__item">
                                     <div class="process-card">
                                         <div class="process-card__img">
-                                            <img src="" alt="" />
+                                            <img src="/assets/images/process/03.png" alt="" />
                                         </div>
 
                                         <div class="process-card__content">
@@ -245,9 +241,9 @@ export default async ({ data }) => {
                                 </div>
 
                                 <div class="about__main">
-                                    <div class="about__logo">
+                                    <a href="https://readyplayer.me" target='_blank' class="about__logo">
                                         <img src="/assets/images/about/logo-rpm.svg" alt="" />
-                                    </div>
+                                    </a>
 
                                     <div class="about__text">
                                         <p>Ready Player Me is an avatar tech leader delivering 10M+ avatars to games and apps every month. Our tech is currently used by 4,000 developers across the world. We offer avatar SDKs and APIs that developers can integrate effortlessly into their apps and games to build avatar systems and save time, boost engagement, and unlock new revenue streams with avatars. Our mission is to build bridges between virtual worlds to create a more open and unified digital experience for users.</p>

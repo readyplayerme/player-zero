@@ -80,6 +80,10 @@
 	}
 }
 
+a.about__logo {
+	transition: opacity .3s;
+}
+
 .about-partners {
 	&__list {
 		display: flex;
@@ -95,6 +99,14 @@
 
 		img {
 			width: 100%;
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	a.about__logo {
+		&:hover {
+			opacity: .7;
 		}
 	}
 }

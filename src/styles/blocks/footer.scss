@@ -18,15 +18,19 @@
 	}
 
 	&__logos {
-		display: flex;
+		display: inline-flex;
 		flex-direction: column;
 		gap: 12rem;
+		align-items: flex-end;
 	}
 
 	&__logo {
 		position: relative;
 		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-end;
 		color: $pink;
+		gap: 12rem;
 		transition: opacity .3s;
 
 		.svg-icon {
@@ -34,29 +38,39 @@
 			height: 54rem;
 		}
 
+		&--pz {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0rem;
+				right: 0;
+				bottom: 10rem;
+				left: 0;
+				z-index: -1;
+				border-radius: 50%;
+				filter: blur(30rem);
+				opacity: 0.7;
+				transform: rotate(15deg) scaleY(0.9);
+				background-color: #8F00B3;
+			}
+		}
+
 		&--rpm {
 			gap: 12rem;
 			color: $white100;
 
-			span {
-				font-size: 16rem;
-			}
 		}
 
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0rem;
-			right: 0;
-			bottom: 10rem;
-			left: 0;
-			z-index: -1;
-			border-radius: 50%;
-			filter: blur(30px);
-			opacity: 0.7;
-			transform: rotate(15deg) scaleY(0.9);
-			background-color: #8F00B3;
+		span {
+			font-size: 9rem;
+			font-weight: 400;
+			color: $white100;
 		}
+	}
+
+	&__logo-text {
+		font-size: 12rem;
+		font-weight: 400;
 	}
 
 	&__item {
@@ -126,7 +140,7 @@
 			}
 
 			span {
-				font-size: 14rem;
+				font-size: 7rem;
 			}
 		}
 

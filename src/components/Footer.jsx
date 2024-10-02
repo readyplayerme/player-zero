@@ -5,14 +5,19 @@ const Footer = ({}) => {
 				<div class="footer__row">
 					<div class="footer__col">
                         <div class="footer__logos">
-                            <a href="" class="footer__logo">
+                            <a href="" class="footer__logo footer__logo--pz">
                                 <svg class="svg-icon" viewBox="0 0 200 72" width="150" height="54"><use xlink:href="#svg-logo"></use></svg>
+                                <span>by Ready Player Me</span>
                             </a>
+ 
+                            {/* <div class="footer__logo-text">
+                                <span>by Ready Player Me</span>
+                            </div> */}
 
-                            <div class="footer__logo footer__logo--rpm">
+                            {/* <a href="" class="footer__logo footer__logo--rpm">
                                 <span>Built by</span>
                                 <img src="/assets/images/icons/logo-rpm-white.svg" alt="Ready player me" />
-                            </div>
+                            </a> */}
                         </div>
 					</div>
 
@@ -21,8 +26,8 @@ const Footer = ({}) => {
                             <ul class="footer__list">
                                 <li class="footer__item"><a href="#process" class="footer__link" data-elts="scrollLink"><span>How it Works</span></a></li>
                                 <li class="footer__item"><a href="#about" class="footer__link" data-elts="scrollLink"><span>About Us</span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span>Terms of Use</span></a></li>
-                                <li class="footer__item"><a href="" class="footer__link"><span>Privacy Policy</span></a></li>
+                                <li class="footer__item"><a href="https://readyplayer.me/terms" class="footer__link" target='_blank'><span>Terms of Use</span></a></li>
+                                <li class="footer__item"><a href="https://readyplayer.me/privacy-policy" target='_blank' class="footer__link"><span>Privacy Policy</span></a></li>
                             </ul>
                         </nav>
 					</div>
@@ -41,7 +46,7 @@ const Footer = ({}) => {
                                         <div class="form-message" data-error></div>
 
                                         <div class="form__agreement">
-                                            By subscribing you are accepting to receive marketing information from Player Zero and agree to the terms of our <a href="">Privacy Policy</a>
+                                            By subscribing you are accepting to receive marketing information from Player Zero and agree to the terms of our <a href="https://readyplayer.me/privacy-policy" target='_blank'>Privacy Policy</a>
                                         </div>
                                     </div>
 
@@ -60,19 +65,19 @@ const Footer = ({}) => {
 					<div class="footer__col">
 						<div class="footer__socials">
                             <div class="socials">
-                                <a href="" class="socials__link" target="_blank">
+                                <a href="https://x.com/weareplayerzero" class="socials__link" target="_blank">
                                     <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-x"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link" target="_blank">
+                                <a href="https://discord.gg/weareplayerzero" class="socials__link" target="_blank">
                                     <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-discord"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link" target="_blank">
+                                <a href="https://www.instagram.com/weareplayerzero" class="socials__link" target="_blank">
                                     <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-instagram"></use></svg>
                                 </a>
 
-                                <a href="" class="socials__link" target="_blank">
+                                <a href="https://www.tiktok.com/@weareplayerzero" class="socials__link" target="_blank">
                                     <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-tiktok"></use></svg>
                                 </a>
 
