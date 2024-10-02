@@ -92,8 +92,17 @@ class App {
 				if (link.includes('#')) {
 					e.preventDefault();
 					this.smoothScroll(el);
+					console.log('el', el);
+					el.classList.add('is-active');
+	
+					this.DOM.scrollLink.forEach((otherEl) => {
+						if (otherEl !== el) {
+							otherEl.classList.remove('is-active');
+						}
+					});
 					return false;
 				}
+
 			});
 		});
     }

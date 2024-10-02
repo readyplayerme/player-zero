@@ -1,0 +1,75 @@
+.nav {
+	&__list {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+	}
+
+	&__item {
+		flex-grow: 1;
+		min-width: 202rem;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 14rem;
+		padding: 26rem;
+		font-family: $font;
+		font-size: 12rem;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		color: $white100;
+		transform-origin: left;
+		transition: color .3s, font-size .3s, font-family .3s, letter-spacing .3s;
+
+		.svg-icon {
+			fill: #3F3F45;
+			transition: opacity .3s, fill .3s;
+		}
+
+		span {
+			border-bottom: 2rem solid #3F3F45;
+			position: relative;
+			padding-bottom: 6rem;
+			bottom: -6rem;
+			transition: border-color .3s;
+		}
+
+		&.is-active {
+			color: $violet;
+
+			.svg-icon {
+				fill: $yellow;
+			}
+
+			span {
+				border-bottom: transparent;
+			}
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	.nav {
+		&__link- {
+			&:hover {
+				color: $blue;
+				font-family: $fontDrukX;
+				letter-spacing: .4em;
+				font-size: 30rem;
+
+				.svg-icon {
+					opacity: 0;
+				}
+
+				span {
+					border-color: transparent;
+				}
+			}
+		}
+	}
+}

@@ -36,7 +36,7 @@ export default async ({ data }) => {
             <Header />
 
             <main class="main">
-                <section class="intro">
+                <section class="intro" id="homepage">
                     <div class="intro__bg">
                         <video muted loop playsinline autoplay src="/assets/images/intro-video.mp4" type="video/mp4"></video>
                     </div>
