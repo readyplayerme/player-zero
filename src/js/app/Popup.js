@@ -92,7 +92,10 @@ export default class Popup {
 			this.DOM.body?.classList.remove('is-certificates-open');
 			popupElt.style.removeProperty('z-index');
 			overflow.off();
+			
+			popupElt.querySelector('video').pause();
 		})
+
 
 		this.onClose();
 	}
