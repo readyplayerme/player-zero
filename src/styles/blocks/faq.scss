@@ -1,0 +1,151 @@
+.faq {
+	background-color: #D2D2DA;
+	;
+	color: $black;
+
+	&__container {
+		@include grid-container();
+	}
+
+	&__wrap {
+		padding: 140rem 0;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	&__title {
+		margin-bottom: 32rem;
+	}
+
+	&__list {
+		max-width: 675rem;
+	}
+
+	&__item {
+		margin-top: 32rem;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.faq-card {
+	padding: 16rem 0;
+	border-bottom: 2rem solid currentColor;
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+		transition: opacity .3s;
+	}
+
+	&__title {
+		position: relative;
+		padding-left: 40rem;
+		@include h5();
+
+		&::before {
+			content: '';
+			display: block;
+			width: 8rem;
+			height: 8rem;
+			border-radius: 50%;
+			background-color: currentColor;
+			position: absolute;
+			top: 50%;
+			left: 10rem;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__arrow {
+		display: flex;
+		flex-shrink: 0;
+		width: 32rem;
+		height: 32rem;
+		margin-left: 16rem;
+		transition: transform .3s;
+
+		.svg-icon {
+			margin: auto;
+			width: 22rem;
+			height: 22rem;
+		}
+	}
+
+	&__drop {
+		height: 0;
+		overflow: hidden;
+		transition: height .3s;
+	}
+
+	&__content {
+		padding-top: 16rem;
+	}
+
+	&.is-open {
+		.faq-card {
+			&__arrow {
+				transform: scale(1,-1);
+			}
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	.faq-card {
+		&__top {
+			&:hover {
+				opacity: .7	;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.faq {
+		&__wrap {
+			padding: 64rem 0;
+			flex-direction: column;
+		}
+
+		&__title {
+			text-align: center;
+		}
+
+		&__list {
+			max-width: 100%;
+		}
+
+		&__item {
+			margin-top: 12rem;
+		}
+	}
+
+	.faq-card {
+		padding: 12rem 0 16rem;
+
+		&__title {
+			padding-left: 36rem;
+
+			&::before {
+				width: 6rem;
+				height: 6rem;
+				left: 8rem;
+			}
+		}
+
+		&__arrow {
+			width: 24rem;
+			height: 24rem;
+		}
+
+		&__content {
+			padding-top: 12rem;
+		}
+	}
+}

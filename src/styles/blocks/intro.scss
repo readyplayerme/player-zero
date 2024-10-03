@@ -4,7 +4,7 @@
 	0% {
 		background-position: 0% 0;
 	}
-	
+
 	100% {
 		background-position: calc(100% - 100vw) 0;
 	}
@@ -51,7 +51,7 @@
 	}
 
 	&__wrap {
-		padding: 216rem 0 145rem;
+		padding: 176rem 0 100rem;
 		min-height: calc(var(--vh, 1vh)* 100);
 		display: flex;
 		flex-direction: column;
@@ -60,8 +60,10 @@
 
 	&__main {
 		display: flex;
-		width: 100%;
+		flex-direction: column;
+		justify-content: center;
 		align-items: center;
+		text-align: center;
 	}
 
 	&__content {
@@ -69,33 +71,61 @@
 	}
 
 	&__title {
-		margin-bottom: 32rem;
-		font-size: 200rem;
+		margin-bottom: 52rem;
+		font-size: 230rem;
+		max-width: 900rem;
 	}
 
-	&__button {
-		margin: 0 auto;
+	&__subtitle {
+		margin-top: 15rem;
+		@include h5();
 	}
 
 	&__bottom {
-		margin-top: 130rem;
+		margin-top: 50rem;
+		text-align: center;
+	}
+
+	&__controls {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 32rem;
+		position: relative;
+	}
+
+	&__play {
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		transform: translateY(-50%);
 		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
+		align-items: center;
+		max-width: 414rem;
+	}
+
+	&__line {
+		flex-grow: 1;
+		height: 2rem;
+		background-color: $white100;
+		margin: 0 24rem;
+		width: 6vw;
+		max-width: 200rem;
 	}
 
 	&__form {
 		width: 100%;
 		max-width: 812rem;
+		margin: 80rem auto 0;
 	}
 
-	&__scroll {
+	/* &__scroll {
 		display: flex;
 		align-items: center;
 		gap: 10rem;
 		margin-left: 40rem;
 		@include body-m();
-	}
+	} */
 }
 
 @media only screen and (max-width: $small) {
@@ -118,11 +148,35 @@
 			line-height: 0.8;
 		}
 
-		&__button {
-			margin-top: 32rem;
+		&__subtitle {
+			font-size: 20rem;
 		}
 
 		&__bottom {
+			margin-top: 32rem;
+		}
+
+		&__controls {
+			margin-top: 144rem;
+			flex-direction: column;
+			gap: 16rem;
+		}
+
+		&__play {
+			flex-direction: column;
+			top: unset;
+			bottom: 100%;
+			right: 50%;
+			transform: translate(50%, 0);
+		}
+
+		&__line {
+			transform: rotate(90deg);
+			width: 20rem;
+			margin: 16rem 0;
+		}
+
+		&__form {
 			margin-top: 32rem;
 		}
 

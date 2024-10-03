@@ -1,0 +1,30 @@
+.countdown {
+	display: inline-flex;
+	align-items: center;
+	gap: 15rem;
+
+	&__value {
+		font-family: $fontDrukW;
+		font-size: 40rem;
+		line-height: 1;
+		font-weight: 700;
+		color: transparent;
+		text-stroke: 1rem $violet;
+		-webkit-text-stroke: 1rem $violet;
+		background-clip: text;
+		-webkit-background-clip: text;
+	}
+
+	&__divider {
+		line-height: 0;
+		color: #2C2C30;
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.countdown {
+		&__value {
+			font-size: 30rem;
+		}
+	}
+}

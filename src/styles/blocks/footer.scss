@@ -1,12 +1,14 @@
 // @include webfont('FF', 'filename');
 
 .footer {
+	border-top: 2rem solid $white100;
+
 	&__container {
 		@include grid-container();
 	}
 
 	&__wrap {
-		padding: 100rem 0;
+		padding: 0 0 100rem;
 	}
 
 	&__row {
@@ -14,7 +16,28 @@
 	}
 
 	&__col {
+		padding-top: 100rem;
+		position: relative;
 		@include grid-col(3,12);
+
+		&--form {
+			@include grid-col(4,12);
+		}
+
+		&--socials {
+			@include grid-col(2,12);
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			height: 16rem;
+			width: 2rem;
+			background-color: $white100;
+			position: absolute;
+			top: 0;
+			left: 16rem;
+		}
 	}
 
 	&__logos {
@@ -74,7 +97,7 @@
 	}
 
 	&__item {
-		margin-top: 48rem;
+		margin-top: 32rem;
 
 		&:first-child {
 			margin-top: 0;
@@ -89,11 +112,11 @@
 	}
 
 	&__socials {
-		text-align: right;
+		/* text-align: right;
 
 		.socials {
 			flex-wrap: wrap;
-		}
+		} */
 	}
 }
 
@@ -116,15 +139,23 @@
 @media only screen and (max-width: $small) {
     .footer {
 		&__wrap {
-			padding: 48rem 0;
+			padding: 0 0 48rem;
 		}
 
 		&__col {
 			margin-top: 48rem;
+			padding-top: 0;
 			@include grid-col(12,12);
 
 			&:first-child {
 				margin-top: 0;
+				padding-top: 48rem;
+			}
+
+			&:not(:first-child) {
+				&::before {
+					display: none;
+				}
 			}
 		}
 
@@ -134,6 +165,10 @@
 		}
 
 		&__logo {
+			width: 220rem;
+		}
+
+		/* &__logo {
 			.svg-icon {
 				width: 120rem;
 				height: auto;
@@ -142,7 +177,7 @@
 			span {
 				font-size: 7rem;
 			}
-		}
+		} */
 
 		&__item {
 			margin-top: 32rem;

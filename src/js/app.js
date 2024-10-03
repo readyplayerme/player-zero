@@ -1,15 +1,19 @@
 import createDOM from './app/utils/createDOM';
+import { overflow } from './app/utils/overflow.js';
 import Popup from './app/Popup';
 import FormFactory, { formDataToObject } from './app/Form.js';
 import HeaderToggle from './app/HeaderToggle';
 import Cookies from 'js-cookie';
+import Accordion from './app/Accordion';
 
 class App {
     constructor() {
         this.DOM = createDOM();
         this.body = this.DOM.body;
         this.scroll = window.scrollY;
-        this.vh = 0;
+        this.width = window.innerWidth;
+		this.height = window.innerHeight;
+		this.isMobile = this.width < 1024;
 
         this.popup = new Popup(this.DOM);
         this.headerToggle = new HeaderToggle(this.DOM.header);
@@ -33,6 +37,7 @@ class App {
 		}]);
 
         this.cookiesController();
+		this.accordion = new Accordion();
 
         this.init();
 		this.addEvents();
@@ -83,6 +88,10 @@ class App {
 		window.addEventListener('load', this.handleLoadEvent);
 		window.addEventListener('scroll', this.handleScrollEvent, { passive: true });
 
+		this.DOM.navToggle?.addEventListener('click', (event) => {
+			this.toggleNav(this.body);
+		});
+
         this.DOM.scrollLink?.forEach((el, i) => {
 			el.addEventListener('click', (e) => {
 				let link = el.getAttribute('href');
@@ -94,17 +103,43 @@ class App {
 					this.smoothScroll(el);
 					console.log('el', el);
 					el.classList.add('is-active');
-	
+
 					this.DOM.scrollLink.forEach((otherEl) => {
 						if (otherEl !== el) {
 							otherEl.classList.remove('is-active');
 						}
 					});
+
+					if (this.isMobile) {
+						this.body.classList.remove('is-nav-open');
+						overflow.off();
+					}
 					return false;
 				}
-
 			});
 		});
+
+		this.DOM.accordionBtn?.forEach((el) => {
+            el.addEventListener('click', (e) => {
+                let el = e.target.closest('[data-elts ~= "accordionBtn"]'),
+                    blockCurrent = el.closest('[data-elts ~= "accordion"]'),
+					box =  el.closest('[data-elts ~= "accordionBox"]'),
+                    blocks = box.querySelectorAll('[data-elts ~= "accordion"]');
+
+                if(!blockCurrent.classList.contains('is-open')) {
+                    blocks.forEach((block) => {
+                        this.accordion.close(block);
+                    });
+
+                    this.accordion.open(blockCurrent);
+
+                } else {
+                    blocks.forEach((block) => {
+                        this.accordion.close(block);
+                    });
+                }
+            })
+        });
     }
 
     handleScrollEvent = (e) => {
@@ -119,10 +154,18 @@ class App {
     handleResizeEvent = (e) => {
 		this.setVh();
 		this.setBaseFontSize();
+
+		this.DOM.accordion?.forEach((el) => {
+            this.accordion.setDefaultHeight(el);
+        });
     }
 
     handleLoadEvent = (e) => {
 		this.body.classList.add('is-init');
+
+		this.DOM.accordion?.forEach((el) => {
+            this.accordion.setDefaultHeight(el);
+        });
     }
 
     setVh() {
@@ -147,6 +190,16 @@ class App {
         let offset = 0;
         this.DOM.header.classList.toggle('is-scroll', scroll > offset);
     }
+
+	toggleNav = (body) => {
+		if(!body.classList.contains('is-nav-open')) {
+			body.classList.add('is-nav-open');
+			overflow.on();
+		} else {
+			body.classList.remove('is-nav-open');
+			overflow.off();
+		}
+	}
 }
 
 window.addEventListener('DOMContentLoaded', () => {

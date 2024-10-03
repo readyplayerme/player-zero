@@ -1,0 +1,76 @@
+.mission {
+	background: $black url(/assets/images/mission-bg.png) 50% 0 no-repeat;
+	background-size: cover;
+	background-blend-mode: lighten;
+
+	&__container {
+		@include grid-container();
+	}
+
+	&__wrap {
+		padding: 140rem 0;
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 40rem;
+	}
+
+	&__box {
+		margin-bottom: 40rem;
+		position: relative;
+	}
+
+	&__subtitle {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 24rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: inline-flex;
+		justify-content: space-between;
+		gap: 12rem;
+		width: 84%;
+
+		span {
+			&:nth-last-child(-n+4) {
+				color: $white64;
+			}
+		}
+	}
+
+	&__text {
+		color: $white64;
+		max-width: 816rem;
+		margin: 0 auto;
+		@include h5();
+
+		span {
+			color: $white100;
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.mission {
+		&__wrap {
+			padding: 64rem 0;
+		}
+
+		&__title {
+			margin-bottom: 32rem;
+		}
+
+		&__subtitle {
+			font-size: 12rem;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&__decor {
+			margin-bottom: 32rem;
+		}
+	}
+}

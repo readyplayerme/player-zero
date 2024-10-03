@@ -10,17 +10,22 @@
 }
 
 .button {
-	@include clearButton($font);
+	@include clearButton($fontDrukW);
+	white-space: nowrap;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	color: currentColor;
 	background-color: $violet;
-	padding: 12rem 20rem;
-	border-radius: 30rem;
-	transition: opacity .3s, color .3s, background-color .3s;
-	@include body-m();
-	// transition: opacity .3s;
+	border: 1rem solid $violet;
+	padding: 22rem 23rem;
+	border-radius: 20rem;
+	transition: opacity .3s, color .3s, background-color .3s, border-color .3s;
+	@include button();
+
+	&--border {
+		background-color: transparent;
+	}
 }
 
 .button-play {
@@ -32,15 +37,18 @@
 	gap: 16rem;
 	aspect-ratio: 1;
 	border-radius: 50%;
-	padding: 85rem 81rem;
-	min-width: 267rem;
+	padding: 53rem 46rem;
+	min-width: 166rem;
 	color: rgba($white100, .8);
 	background-color: #2C2B5D;
 	overflow: hidden;
+	@include button();
 
 	svg {
 		position: relative;
 		z-index: 2;
+		width: 73rem;
+		height: auto;
 	}
 
 	&::before {
@@ -86,43 +94,6 @@
 		background-color: #2C2B5D;
 		border-radius: 50%;
 		transition: background-color .3s;
-	/* transition: color .3s;
-
-	&::before,
-	&::after {
-		content: '';
-		display: block;
-		background-color: $yellow;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 100%;
-		height: 100%;
-		transform: translate(-50%, -50%);
-		border-radius: 50%;
-		z-index: 1;
-		opacity: 0;
-		transition: opacity .3s;
-	}
-
-	&::before {
-		filter: blur(50rem);
-		-webkit-filter: blur(50rem);
-	}
-
-	.svg-icon {
-		position: relative;
-		z-index: 2;
-
-		&--icon {
-			width: 105rem;
-			height: 43rem;
-		}
-
-		&--text {
-			width: 101rem;
-			height: 38rem;
-		} */
 	}
 }
 
@@ -131,6 +102,7 @@
 		&:hover {
 			color: $violet;
 			background-color: $yellow;
+			border-color: $yellow;
 		}
 	}
 
@@ -142,13 +114,6 @@
 
 			&::before {
 				animation-play-state: running;
-/*
-			color: $violet;
-
-			&::before,
-			&::after {
-				opacity: 1;
- */
 			}
 		}
 	}
@@ -156,17 +121,18 @@
 
 @media only screen and (max-width: $small) {
 	.button-play {
-		min-width: 179rem;
-		padding: 54rem 51rem;
+		min-width: 110rem;
+		padding: 30rem 30rem;
+		gap: 8rem;
 
 		.svg-icon {
 			&--icon {
-				width: 72rem;
+				width: 50rem;
 				height: auto;
 			}
 
 			&--text {
-				width: 68rem;
+				width: 48rem;
 				height: auto;
 			}
 		}

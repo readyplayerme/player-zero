@@ -88,9 +88,7 @@
 			}
 
 			&__button {
-				padding: 13rem 20rem;
-				font-size: 18rem;
-				font-weight: 700;
+				padding: 12rem 20rem;
 				border-radius: 14rem;
 				min-height: 48rem;
 			}
@@ -107,7 +105,7 @@
 	}
 
 	&__button {
-		padding: 32rem 30rem;
+		padding: 31rem 29rem;
 
 		.svg-icon {
 			width: 36rem;
@@ -173,7 +171,7 @@
 				}
 
 				&__button {
-					padding: 14rem 16rem;
+					padding: 13rem 12rem;
 					min-height: 48rem;
 				}
 			}
@@ -184,12 +182,10 @@
 				&__input {
 					padding: 11rem 16rem;
 					min-height: 48rem;
-					font-size: 16rem;
 				}
 
 				&__button {
 					width: 100%;
-					color: $black;
 				}
 			}
 		}

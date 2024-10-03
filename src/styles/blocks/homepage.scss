@@ -1,16 +1,52 @@
 .homepage {
-	position: relative;
 	overflow: hidden;
 
 	&__container {
 		@include grid-container();
 	}
 
-	&__wrap {
-		padding: 200rem 0;
+	&__wrap {}
+
+	&__top {
+		margin-bottom: 140rem;
 	}
 
-	&__logo {
+	&__title {
+		text-align: center;
+	}
+
+	&__main {
+		position: relative;
+		margin: 140rem 0 -140rem;
+	}
+
+	&__image {
+		/* position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 75%;
+		transform: translate(-5%, 0); */
+		width: 75%;
+		margin-top: -50rem;
+
+		img {
+			transform: scale(1.1) translate(-5%, -140rem);
+		}
+	}
+
+	&__message {
+		/* margin-left: auto;
+		position: relative;
+		z-index: 1;
+		@include grid-col(6,12); */
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 45%;
+		max-width: 532rem;
+	}
+
+	/* &__logo {
 		color: $pink;
 		line-height: 0;
 		text-align: center;
@@ -35,12 +71,52 @@
 		left: 0;
 		right: 0;
 		z-index: -1;
+	} */
+}
+
+.homepage-message {
+	display: flex;
+	width: 100%;
+
+	&__main {
+		padding: 0 12%;
+		display: flex;
+		flex-direction: column;
+		gap: 24rem;
+	}
+
+	&__line {
+		flex-shrink: 0;
+		width: 12rem;
+		border-color: $white100;
+		border-style: solid;
+
+		&--left {
+			border-width: 2rem 0 2rem 2rem;
+		}
+
+		&--right {
+			border-width: 2rem 2rem 2rem 0;
+		}
+	}
+
+	&__icon {
+		color: $yellow;
+
+		.svg-icon {
+			width: 64rem;
+			height: auto;
+		}
+	}
+
+	&__descr {
+		@include h5();
 	}
 }
 
 @media only screen and (max-width: $small) {
 	.homepage {
-		&__wrap {
+		/* &__wrap {
 			padding: 64rem 0 140rem;
 		}
 
@@ -57,6 +133,46 @@
 		&__image {
 			left: -16rem;
 			right: -16rem;
+		} */
+
+		&__top {
+			margin-bottom: 32rem;
+		}
+
+		&__main {
+			margin: 32rem 0;
+		}
+
+		&__message {
+			position: static;
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&__image {
+			width: 100%;
+			margin: 0;
+
+			img {
+				transform: scale(1.2) translate(0, 20rem);
+			}
+		}
+	}
+
+	.homepage-message {
+		&__main {
+			gap: 20rem;
+			padding: 0 12rem;
+		}
+
+		&__icon {
+			.svg-icon {
+				width: 40rem;
+			}
+		}
+
+		&__text {
+			order: -1;
 		}
 	}
 }
