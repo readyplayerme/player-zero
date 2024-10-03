@@ -88,6 +88,10 @@ class App {
 		window.addEventListener('load', this.handleLoadEvent);
 		window.addEventListener('scroll', this.handleScrollEvent, { passive: true });
 
+		this.DOM.showFormAnim.addEventListener('click', () => {
+			this.DOM.formAnim.classList.toggle('is-open');
+		})
+
 		this.DOM.navToggle?.addEventListener('click', (event) => {
 			this.toggleNav(this.body);
 		});
@@ -146,8 +150,6 @@ class App {
         this.headerToggle.toggle(this.scroll);
 
 		this.setHeaderScrollClass(this.scroll);
-        setTimeout(() => {
-        }, 100);
     }
 
     handleResizeEvent = (e) => {

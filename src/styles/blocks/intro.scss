@@ -117,6 +117,16 @@
 		width: 100%;
 		max-width: 812rem;
 		margin: 80rem auto 0;
+
+		form {
+			overflow: hidden;
+			height: 0;
+			transition: height .3s;
+		}
+
+		&.is-open form {
+			height: 200rem;
+		}
 	}
 
 	/* &__scroll {
@@ -178,6 +188,10 @@
 
 		&__form {
 			margin-top: 32rem;
+
+			&.is-open form {
+				height: 100rem;
+			}
 		}
 
 		&__scroll {

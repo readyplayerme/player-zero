@@ -133,13 +133,14 @@ export default async ({ data }) => {
                                     <div class="intro__button">
                                         <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button>
                                     </div>
+                                    
                                     <div class="intro__button">
-                                        <button class="button button--border">Notify Me</button>
+                                        <button class="button button--border" type="button" data-elt="showFormAnim">Notify Me</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="intro__form">
+                            <div class="intro__form" data-elt="formAnim">
                                 <form class="form form--intro" id="subscribe-intro">
                                     <div class="form__box">
                                         <div class="form__field form__field--input" data-input="email">
