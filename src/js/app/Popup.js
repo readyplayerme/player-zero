@@ -27,6 +27,16 @@ export default class Popup {
 				event.preventDefault();
 				this.closeAll();
 			}
+
+
+			if (!event.target.closest('[data-elts="popupBtn"]')) {
+				const inside = event.target.closest('.popup__main');
+
+				if (!inside) {
+					event.preventDefault();
+					this.closeAll();
+				}
+			}
 		})
 
 		if (this.query.popup) {
