@@ -33,14 +33,14 @@ const Layout = ({ children, title, bodyClass }) => {
 
             <title>{title}</title>
 
-            <link href="/assets/styles/styles.css" rel="stylesheet" />
-            <script src="/assets/js/head.js"></script>
+            <link href={`/assets/styles/styles.css?v=${+new Date()}`} rel="stylesheet" />
+            <script src={`/assets/js/head.js?v=${+new Date()}`}></script>
         </head>
         <body data-elt="body" class={bodyClass}>
             <SvgIcons />
             {children}
 
-            <script src="/assets/js/app.js"></script>
+            <script src={`/assets/js/app.js?v=${+new Date()}`}></script>
         </body>
     </html>
 };
