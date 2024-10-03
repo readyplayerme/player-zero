@@ -6,7 +6,7 @@ export default async ({ data }) => {
     // inline request example
     // const apiResponse = await fetch(process.env.URL + '/api/200.json').then(r => r.json()).catch(e => e.message);
     // console.log('In JSX fetch inside component happens on component request', apiResponse);
-    return <Layout title="Player Zero">
+    return <Layout title="Player Zero" bodyClass="is-loading">
 
         <div class="cookies" data-elt="cookies">
             <button class="cookies__close" data-elt="closeCookies">
