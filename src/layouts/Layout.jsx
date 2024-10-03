@@ -37,6 +37,7 @@ const Layout = ({ children, title, bodyClass }) => {
             <script src={`/assets/js/head.js?v=${+new Date()}`}></script>
         </head>
         <body data-elt="body" class={bodyClass}>
+            <div className="loader"></div>
             <SvgIcons />
             {children}
 
