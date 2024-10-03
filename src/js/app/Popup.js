@@ -91,7 +91,10 @@ export default class Popup {
 			this.DOM.body?.classList.remove('is-inventory-open');
 			this.DOM.body?.classList.remove('is-certificates-open');
 			popupElt.style.removeProperty('z-index');
-			overflow.off();
+			
+			setTimeout(() => {
+				overflow.off();
+			}, 200);
 		})
 
 		this.onClose();
