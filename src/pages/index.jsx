@@ -101,17 +101,17 @@ export default async ({ data }) => {
 
                                 <div class="intro__countdown">
                                     <div class="countdown">
-                                        <div class="countdown__value">02</div>
+                                        <div class="countdown__value" data-elt="hours">--</div>
                                         <div class="countdown__divider">
                                             <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-union"></use></svg>
                                         </div>
 
-                                        <div class="countdown__value">36</div>
+                                        <div class="countdown__value" data-elt="mins">--</div>
                                         <div class="countdown__divider">
                                             <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-union"></use></svg>
                                         </div>
 
-                                        <div class="countdown__value">58</div>
+                                        <div class="countdown__value" data-elt="secs">--</div>
                                     </div>
                                 </div>
 

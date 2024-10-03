@@ -6,6 +6,8 @@ import HeaderToggle from './app/HeaderToggle';
 import Cookies from 'js-cookie';
 import Accordion from './app/Accordion';
 
+
+
 class App {
     constructor() {
         this.DOM = createDOM();
@@ -74,8 +76,29 @@ class App {
 	}
 
     init = () => {
-        /* this.setVh();
-		this.setBaseFontSize(); */
+		const countdownDate = new Date("October 8, 2024 17:00:00").getTime();
+		const leadingZero = (v) => v < 10 ? '0' + v.toString() : v;
+		const count = () => {
+			const now = new Date().getTime(); // Текущее время
+			const timeRemaining = countdownDate - now; // Оставшееся время
+
+			const totalHours = Math.floor(timeRemaining / (1000 * 60 * 60)); // Общее количество часов
+			const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+			
+			this.DOM.hours.innerText = leadingZero(totalHours);
+			this.DOM.mins.innerText = leadingZero(minutes);
+			this.DOM.secs.innerText = leadingZero(seconds);
+
+			// Если время истекло
+			if (timeRemaining < 0) {
+				clearInterval(updateTimer);
+				console.log("Время вышло!");
+			}
+		}
+		const updateTimer = setInterval(count, 1000);
+
+		count();
 
 		setTimeout(() => {
             this.setHeaderScrollClass(this.scroll);

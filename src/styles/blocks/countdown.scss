@@ -13,8 +13,13 @@
 		-webkit-text-stroke: 1rem $violet;
 		background-clip: text;
 		-webkit-background-clip: text;
-	}
+		text-align: center;
 
+		&:not(:first-child) {
+			width: 90rem;
+		}
+	}
+	
 	&__divider {
 		line-height: 0;
 		color: #2C2C30;
@@ -25,6 +30,24 @@
 	.countdown {
 		&__value {
 			font-size: 30rem;
+			
+			&:not(:first-child) {
+				width: 65rem;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $xxsmall) {
+	.countdown {
+		gap: 10rem;
+
+		&__value {
+			// font-size: 20rem;
+			
+			&:not(:first-child) {
+				// width: 40rem;
+			}
 		}
 	}
 }
