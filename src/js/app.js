@@ -101,7 +101,6 @@ class App {
 				if (link.includes('#')) {
 					e.preventDefault();
 					this.smoothScroll(el);
-					console.log('el', el);
 					el.classList.add('is-active');
 
 					this.DOM.scrollLink.forEach((otherEl) => {
@@ -147,7 +146,7 @@ class App {
         this.headerToggle.toggle(this.scroll);
 
         setTimeout(() => {
-            this.setHeaderScrollClass(this.scroll);
+            //this.setHeaderScrollClass(this.scroll);
         }, 100);
     }
 

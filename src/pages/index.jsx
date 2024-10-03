@@ -89,7 +89,7 @@ export default async ({ data }) => {
                     </div>
                 </section> */}
 
-                <section class="intro" id="homepage">
+                <section class="intro">
                     <div class="intro__bg">
                         <video muted loop playsinline autoplay src="/assets/images/intro-video.mp4" type="video/mp4"></video>
                     </div>
@@ -135,7 +135,6 @@ export default async ({ data }) => {
                                     </div>
                                     <div class="intro__button">
                                         <button class="button button--border">Notify Me</button>
-
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +162,7 @@ export default async ({ data }) => {
                     </div>
                 </section>
 
-                <section class="homepage">
+                <section class="homepage" id="homepage">
                     <div class="homepage__container">
                         <div class="homepage__wrap">
                             {/* <div class="homepage__logo">
