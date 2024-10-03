@@ -350,7 +350,7 @@ export default async ({ data }) => {
                                     <div class="process__item">
                                         <div class="process-card">
                                             <div class="process-card__cover">
-                                                <img src="" alt="" />
+                                                <video muted loop playsinline autoplay src="/assets/images/process/PlayerZero_CompanionMedia1.mp4" type="video/mp4"></video>
                                             </div>
 
                                             <div class="process-card__content">
@@ -358,6 +358,8 @@ export default async ({ data }) => {
 
                                                 <div class="process-card__title">Customize your avatar</div>
                                             </div>
+
+                                            <button class="process__button button" data-elts="popupBtn" data-popup="process3">See it in action</button>
                                         </div>
                                     </div>
 
@@ -389,8 +391,6 @@ export default async ({ data }) => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <button class="process__button button" data-elts="popupBtn" data-popup="video">See it in action</button>
                             </div>
                         </div>
                     </div>
@@ -697,7 +697,24 @@ export default async ({ data }) => {
                 <div class="popup__main">
                     <div class="popup__video">
                         <div class="video">
-                            <video muted loop playsinline controls src="/assets/images/intro-video.mp4" type="video/mp4"></video>
+                            <video muted loop playsinline src="/assets/images/intro-video.mp4" type="video/mp4"></video>
+                            <button class="video__button"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" data-elts="popup" data-popup="process3">
+            <div class="popup__box">
+                <button class="popup__close" data-elts="closePopup">
+                    <svg class="svg-icon" viewBox="0 0 40 40" width="40" height="40"><use xlink:href="#svg-close"></use></svg>
+                </button>
+
+                <div class="popup__main">
+                    <div class="popup__video">
+                        <div class="video">
+                            <video muted loop playsinline src="/assets/images/process/PlayerZero_CompanionMedia1.mp4" type="video/mp4"></video>
                             <button class="video__button"></button>
                         </div>
                     </div>

@@ -69,6 +69,7 @@ export default class Popup {
 				popupElt.classList.add('is-open');
 				this.openedPopups.push(id);
 				overflow.on();
+				popupElt.querySelector('video').play();
 
 				if(id === 'certificates') {
 					this.DOM.body.classList.add('is-certificates-open');

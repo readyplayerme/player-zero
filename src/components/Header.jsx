@@ -20,7 +20,7 @@ const Header = ({children, data}) => {
 
 						<ul class="nav__list">
 							<li class="nav__item">
-                                <a href="#homepage" class="nav__link is-active-" data-elts="scrollLink">
+                                <a href="#homepage" class="nav__link is-active" data-elts="scrollLink">
                                     <span class="default">
                                         <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-star"></use></svg>
                                         <span>Homepage</span>
@@ -33,9 +33,9 @@ const Header = ({children, data}) => {
                                 <a href="#process" class="nav__link" data-elts="scrollLink">
                                     <span class="default">
                                         <svg class="svg-icon" viewBox="0 0 21 22" width="21" height="22" style="width: 21rem; height: 22rem;"><use xlink:href="#svg-angle-full"></use></svg>
-                                        <span>HOW TO UsE</span>
+                                        <span>HOW IT WORKS</span>
                                     </span>
-                                    <span class="hover">HOW TO UsE</span>
+                                    <span class="hover">HOW IT WORKS</span>
                                 </a>
                             </li>
 
