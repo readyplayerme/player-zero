@@ -85,7 +85,7 @@ class App {
 			const totalHours = Math.floor(timeRemaining / (1000 * 60 * 60)); // Общее количество часов
 			const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
 			const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-			
+
 			this.DOM.hours.innerText = leadingZero(totalHours);
 			this.DOM.mins.innerText = leadingZero(minutes);
 			this.DOM.secs.innerText = leadingZero(seconds);
