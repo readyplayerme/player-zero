@@ -1,0 +1,32 @@
+.decor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&__circle {
+		width: 48rem;
+		height: 48rem;
+		border: 2rem solid $white100;
+		border-radius: 50%;
+	}
+
+	&__line {
+		background-color: $white100;
+		width: 2rem;
+		height: 200rem;
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.decor {
+		&__circle {
+			width: 20rem;
+			height: 20rem;
+		}
+
+		&__line {
+			height: 100rem;
+		}
+	}
+}

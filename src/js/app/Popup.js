@@ -80,6 +80,7 @@ export default class Popup {
 				this.DOM.body?.classList.remove('is-inventory-open');
 				this.DOM.body?.classList.remove('is-certificates-open');
 				overflow.off();
+				popupElt.querySelector('video').pause();
 			}
 		});
 	}
@@ -91,9 +92,11 @@ export default class Popup {
 			this.DOM.body?.classList.remove('is-inventory-open');
 			this.DOM.body?.classList.remove('is-certificates-open');
 			popupElt.style.removeProperty('z-index');
-			overflow.off();
-			
 			popupElt.querySelector('video').pause();
+
+			setTimeout(() => {
+				overflow.off();
+			}, 200);
 		})
 
 

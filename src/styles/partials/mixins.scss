@@ -147,13 +147,13 @@
 @mixin h1 {
     font-family: $fontDrukX;
     font-weight: 1000;
-    font-size: 240rem;
+    font-size: 280rem;
     line-height: .84;
     letter-spacing: 0.01em;
     text-transform: uppercase;
 
     @media only screen and (max-width: $normal) {
-
+        font-size: 180rem;
     }
 
     @media only screen and (max-width: $small) {
@@ -191,6 +191,10 @@
     font-size: 28rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
+
+    @media only screen and (max-width: $small) {
+        font-size: 20rem;
+    }
 }
 
 @mixin body-m {
@@ -223,4 +227,12 @@
     font-size: 12rem;
     line-height: 1.3;
     letter-spacing: 0.01em;
+}
+
+@mixin button {
+    font-family: $fontDrukW;
+    font-weight: 700;
+    font-size: 16rem;
+    line-height: .75;
+    letter-spacing: 0;
 }

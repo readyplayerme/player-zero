@@ -9,7 +9,7 @@
 	}
 
 	&__wrap {
-		padding: 200rem 0;
+		padding: 140rem 0;
 	}
 
 	&__block {
@@ -17,12 +17,16 @@
 		margin-top: 100rem;
 		display: flex;
 		flex-flow: row wrap;
-		gap: 32rem;
+		gap: 48rem;
 
 		&:first-child {
 			margin-top: 0;
 
 			.about {
+				&__title {
+					margin-right: 50%;
+				}
+
 				&__logo {
 					width: 300rem;
 					height: 132rem;
@@ -32,9 +36,6 @@
 				}
 
 				&__image {
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
 					right: 0;
 
 					img {
@@ -46,21 +47,38 @@
 
 		&:nth-of-type(2n) {
 			.about {
+				&__title {
+					margin-left: 50%;
+
+				}
+
 				&__main {
-					text-align: right;
-					align-items: flex-end;
+					/* text-align: right;
+					align-items: flex-end; */
+					margin-left: auto;
+				}
+
+				&__image {
+					left: 0;
+				}
+
+				&__logo {
+					align-self: flex-end;
 				}
 			}
 		}
 	}
 
 	&__title {
-		margin-bottom: 100rem;
-		width: 100%;
+		width: 50%;
 	}
 
 	&__image {
 		width: calc(50% - var(--grid-gap));
+		position: absolute;
+		top: 0;
+		/* top: 50%;
+		transform: translateY(-50%); */
 
 		img {
 			width: 100%;
@@ -72,7 +90,7 @@
 		width: calc(50% - var(--grid-gap));
 		display: flex;
 		flex-direction: column;
-		gap: 48rem;
+		gap: 64rem;
 	}
 
 	&__text {
@@ -85,10 +103,15 @@ a.about__logo {
 }
 
 .about-partners {
+	&__title {
+		font-weight: 700;
+		margin-bottom: 64rem;
+	}
+
 	&__list {
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: flex-end;
+		justify-content: flex-start;
 		gap: 24rem;
 	}
 
@@ -119,6 +142,7 @@ a.about__logo {
 
 		&__title {
 			margin-bottom: 0;
+			width: 100%;
 			text-align: center;
 		}
 
@@ -127,9 +151,8 @@ a.about__logo {
 
 			&:first-child {
 				.about {
-					&__image {
-						position: static;
-						transform: translateY(0);
+					&__title {
+						margin-right: 0;
 					}
 
 					&__logo {
@@ -141,9 +164,17 @@ a.about__logo {
 
 			&:nth-of-type(2n) {
 				.about {
+					&__title {
+						margin-left: 0;
+					}
+
+					&__logo {
+						align-self: flex-start;
+					}
+
 					&__main {
-						text-align: left;
-						align-items: flex-start;
+						/* text-align: left;
+						align-items: flex-start; */
 					}
 				}
 			}
@@ -151,6 +182,8 @@ a.about__logo {
 
 		&__image {
 			width: 100%;
+			position: static;
+			transform: translateY(0);
 
 			img {
 				margin: 0 auto;
@@ -166,12 +199,6 @@ a.about__logo {
 			margin: 0 auto;
 		}
     }
-
-	.about-partners {
-		&__list {
-			justify-content: flex-start;
-		}
-	}
 }
 
 @media only screen and (max-width: $xsmall) {

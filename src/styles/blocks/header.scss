@@ -57,6 +57,7 @@
 		color: $pink;
 		margin-right: 24rem;
 		transition: opacity .3s;
+		z-index: 2;
 
 		.svg-icon {
 			width: 200rem;
@@ -79,8 +80,45 @@
 		}
 	}
 
+	&__nav {
+		width: 100%;
+		max-width: 942rem;
+	}
+
 	&__socials {
-		margin-left: auto;
+		margin-left: 24rem;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__burger {
+		display: none;
+        position: relative;
+        z-index: 2;
+        padding: 30rem;
+        width: 40rem;
+        height: 40rem;
+		margin-left: 24rem;
+
+        span {
+            position: absolute;
+            left: 21rem;
+            display: block;
+            height: 2rem;
+            width: 18rem;
+            background-color: $blue;
+            border-radius: 2rem;
+            transition: top .3s .3s, transform .3s;
+            transform-origin: center;
+
+            &:nth-of-type(1) {
+                top: calc(50% - 4rem);
+            }
+
+            &:nth-of-type(2) {
+                top: calc(50% + 3rem);
+            }
+        }
 	}
 }
 
@@ -89,6 +127,28 @@
 		&__logo {
 			&:hover {
 				opacity: .7;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $normal) {
+	.header {
+		&__logo {
+			.svg-icon {
+				width: 140rem;
+				height: auto;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $medium) {
+	.header {
+		&__logo {
+			.svg-icon {
+				width: 80rem;
+				height: 29rem;
 			}
 		}
 	}
@@ -105,6 +165,10 @@
 				width: 80rem;
 				height: 29rem;
 			}
+		}
+
+		&__burger {
+			display: flex;
 		}
 	}
 }

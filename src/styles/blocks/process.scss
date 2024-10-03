@@ -6,7 +6,7 @@
 	}
 
 	&__wrap {
-		padding: 200rem 0;
+		padding: 64rem 0 140rem;
 	}
 
 	&__title {
@@ -14,8 +14,40 @@
 		text-align: center;
 	}
 
+	&__main {
+		position: relative;
+	}
+
+	&__list {
+		border-bottom: 2rem solid currentColor;
+		display: flex;
+		margin: 0 -48rem;
+		padding: 0 32rem;
+		width: calc(100% + 96rem);
+		overflow-x: auto;
+		@include scrollbar();
+	}
+
 	&__item {
-		margin-top: 64rem;
+		flex-grow: 1;
+		padding: 0 16rem;
+		width: 20%;
+		min-width: 320rem;
+		position: relative;
+		padding-bottom: 176rem;
+
+		&::before {
+			content: '';
+			display: block;
+			height: 16rem;
+			width: 2rem;
+			background-color: $white100;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		/* margin-top: 64rem;
 
 		&:first-child {
 			margin-top: 0;
@@ -25,11 +57,59 @@
 			.process-card {
 				flex-flow: row-reverse wrap;
 			}
-		}
+		} */
+	}
+
+	&__button {
+		position: absolute;
+		bottom: 70rem;
+		left: 50%;
+		transform: translate(-50%, 0);
 	}
 }
 
 .process-card {
+	text-align: center;
+
+	&__cover {
+		border-radius: 20rem;
+		overflow: hidden;
+		background-color: #1A1A1A;
+		position: relative;
+		margin-bottom: 32rem;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 0;
+			padding-bottom: 100%;
+		}
+
+		img, video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		img:not([src]) {
+			display: none;
+		}
+	}
+	&__num {
+		color: $white64;
+	}
+
+	&__title {
+		font-weight: 700;
+		margin-top: 16rem;
+	}
+}
+
+/* .process-card {
 	display: flex;
 	flex-flow: row wrap;
 	//align-items: center;
@@ -81,7 +161,7 @@
 	&__title {
 		@include h4();
 	}
-}
+} */
 
 @media only screen and (max-width: $small) {
 	.process {
@@ -89,14 +169,26 @@
 			padding: 64rem 0;
 		}
 
+		&__list {
+			margin: 0 -16rem;
+			padding: 0 8rem;
+			width: calc(100% + 32rem);
+			@include scrollbarClear();
+		}
+
 		&__item {
-			margin-top: 64rem;
+			padding: 0 8rem 140rem;
+			/* margin-top: 64rem;
 
 			&:nth-of-type(2n) {
 				.process-card {
 					flex-flow: row wrap;
 				}
-			}
+			} */
+		}
+
+		&__button {
+			bottom: 50rem;
 		}
 	}
 
