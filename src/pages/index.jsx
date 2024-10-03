@@ -131,7 +131,7 @@ export default async ({ data }) => {
                                     </div>
 
                                     <div class="intro__button">
-                                        <button class="button">Play Trailer</button>
+                                        <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button>
                                     </div>
                                     <div class="intro__button">
                                         <button class="button button--border">Notify Me</button>
