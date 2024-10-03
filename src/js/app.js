@@ -145,8 +145,8 @@ class App {
         this.scroll = window.scrollY;
         this.headerToggle.toggle(this.scroll);
 
+		this.setHeaderScrollClass(this.scroll);
         setTimeout(() => {
-            //this.setHeaderScrollClass(this.scroll);
         }, 100);
     }
 
