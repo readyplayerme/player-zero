@@ -3,7 +3,8 @@ const Header = ({children, data}) => {
 		<div class="header__container">
 			<div class="header__wrap">
 				<a href="" class="header__logo">
-					<svg class="svg-icon" viewBox="0 0 200 72" width="200" height="72"><use xlink:href="#svg-logo"></use></svg>
+                    <video muted loop playsinline autoplay src="/assets/images/logo-dynamic.mp4" type="video/mp4"></video>
+					{/* <svg class="svg-icon" viewBox="0 0 200 72" width="200" height="72"><use xlink:href="#svg-logo"></use></svg> */}
 				</a>
 
 				<div class="header__nav">
@@ -19,7 +20,7 @@ const Header = ({children, data}) => {
 
 						<ul class="nav__list">
 							<li class="nav__item">
-                                <a href="#homepage" class="nav__link is-active" data-elts="scrollLink">
+                                <a href="#homepage" class="nav__link is-active-" data-elts="scrollLink">
                                     <span class="default">
                                         <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24" style="width: 24rem; height: 24rem;"><use xlink:href="#svg-star"></use></svg>
                                         <span>Homepage</span>

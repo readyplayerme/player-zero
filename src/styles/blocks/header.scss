@@ -1,15 +1,15 @@
 // @include webfont('FF', 'filename');
 
 .header {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
 	z-index: 99;
-	transform: translateY(-100%);
+	//transform: translateY(-100%);
 	transition: transform .3s;
 
-	&::before {
+	/* &::before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -33,7 +33,7 @@
 
 	&.is-active {
 		transform: translateY(0);
-	}
+	} */
 
 	&__container {
 		@include grid-container();
@@ -50,7 +50,7 @@
 		justify-content: space-between;
 	}
 
-	&__logo {
+	/* &__logo {
 		display: inline-block;
 		line-height: 0;
 		position: relative;
@@ -78,6 +78,19 @@
 			transform: rotate(15deg) scaleY(0.9);
 			background-color: #8F00B3;
 		}
+	} */
+
+	&__logo {
+		width: 200rem;
+		flex-shrink: 0;
+		position: relative;
+		z-index: 2;
+
+		img, video {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
 	}
 
 	&__nav {
@@ -98,7 +111,7 @@
         padding: 30rem;
         width: 40rem;
         height: 40rem;
-		margin-left: 24rem;
+		margin-left: 16rem;
 
         span {
             position: absolute;
@@ -135,23 +148,24 @@
 @media only screen and (max-width: $normal) {
 	.header {
 		&__logo {
-			.svg-icon {
+			width: 140rem;
+			/* .svg-icon {
 				width: 140rem;
 				height: auto;
-			}
+			} */
 		}
 	}
 }
 
 @media only screen and (max-width: $medium) {
-	.header {
+	/* .header {
 		&__logo {
 			.svg-icon {
 				width: 80rem;
 				height: 29rem;
 			}
 		}
-	}
+	} */
 }
 
 @media only screen and (max-width: $small) {
@@ -161,10 +175,15 @@
 		}
 
 		&__logo {
-			.svg-icon {
+			width: 90rem;
+			/* .svg-icon {
 				width: 80rem;
 				height: 29rem;
-			}
+			} */
+		}
+
+		&__socials {
+			margin-left: 16rem;
 		}
 
 		&__burger {
