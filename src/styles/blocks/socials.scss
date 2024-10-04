@@ -13,8 +13,8 @@
 		transition: opacity .3s;
 
 		.svg-icon {
-			width: 24rem;
-			height: 24rem;
+			width: 32rem;
+			height: 32rem;
 		}
 	}
 }
@@ -32,5 +32,12 @@
 @media only screen and (max-width: $small) {
     .socials {
 		gap: 16rem;
+
+		&__link {
+			.svg-icon {
+				width: 24rem;
+				height: 24rem;
+			}
+		}
 	}
 }

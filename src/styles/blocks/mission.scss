@@ -1,9 +1,24 @@
 .mission {
-	background: $black url(/assets/images/mission-bg.png) 50% 0 no-repeat;
+	position: relative;
+	/* background: $black url(/assets/images/mission-bg.png) 50% 0 no-repeat;
 	background-size: cover;
-	background-blend-mode: lighten;
+	background-blend-mode: lighten; */
+	&::before {
+		content: '';
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background: url(/assets/images/line_playerzero_compressed.png) 0% 0 repeat-x;
+		animation: flow 6s linear infinite forwards;
+	}
 
 	&__container {
+		position: relative;
+		z-index: 2;
 		@include grid-container();
 	}
 
