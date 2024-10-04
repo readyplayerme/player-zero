@@ -478,7 +478,7 @@ export default async ({ data }) => {
                 <div class="popup__main">
                     <div class="popup__video">
                         <div class="video">
-                            <video muted loop playsinline src="/assets/images/trailer.mp4" type="video/mp4"></video>
+                            <video loop playsinline src="/assets/images/trailer.mp4" type="video/mp4"></video>
                         </div>
                     </div>
                 </div>
@@ -494,7 +494,7 @@ export default async ({ data }) => {
                 <div class="popup__main">
                     <div class="popup__video">
                         <div class="video">
-                            <video muted loop playsinline src="/assets/images/process/PlayerZero_CompanionMedia1.mp4" type="video/mp4"></video>
+                            <video loop playsinline src="/assets/images/process/PlayerZero_CompanionMedia1.mp4" type="video/mp4"></video>
                         </div>
                     </div>
                 </div>
