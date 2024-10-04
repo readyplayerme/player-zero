@@ -10,7 +10,7 @@
 		right: 0;
 		bottom: 0;
 		z-index: 3;
-		mix-blend-mode: color;
+		mix-blend-mode: hard-light;
 		background: url(/assets/images/line_playerzero_compressed.png) 0% 0 repeat-x;
 		animation: flow 12s linear infinite forwards;
 	}
