@@ -39,7 +39,7 @@ const Footer = ({}) => {
 
 					<div class="footer__col footer__col--form">
 						<div class="footer__form">
-                            <form class="form form--footer" id="subscribe-footer">
+                            <form action="/api/send" method="POST" class="form form--footer" id="subscribe-footer">
                                 <div class="form__box">
                                     <div class="form__field">
                                         <div class="form__title">Don’t miss our news and announcements</div>

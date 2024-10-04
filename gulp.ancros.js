@@ -194,7 +194,7 @@ const watchFiles = task('watchFiles', (done) => {
 const tasks = {
     start:  series(clean, publicFiles, devServer, render, js, styles, watchFiles, open),
     dev:    series(clean, publicFiles, devServer, render, js, styles, watchFiles),
-    server: series(clean, publicFiles, js, styles, devServer, watchFiles),
+    server: series(clean, publicFiles, devServer, js, styles, watchFiles),
     build:  series(setProduction, clean, render, publicFiles, js, styles),
 };
 

@@ -141,7 +141,7 @@ export default async ({ data }) => {
                             </div>
 
                             <div class="intro__form" data-elt="formAnim">
-                                <form class="form form--intro" id="subscribe-intro">
+                                <form action="/api/send" method="POST" class="form form--intro" id="subscribe-intro">
                                     <div class="form__box">
                                         <div class="form__field form__field--input" data-input="email">
                                             <input type="text" name="email" class="form__input" placeholder="YOUR E-MAIL"/>

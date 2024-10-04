@@ -3,74 +3,67 @@ import validator from 'validator';
 import wait from './utils/wait.js';
 
 /*
-Форма требует 2 обязательных параметра
-    1) form - селектор или HTML элемент
-    2) constraints - описание всех обязательных полей
-    Пример формы
-    {
-        form: '#form-main',
-        constraints: {
-            name: {
-                presence: true
-            },
-            email: {
-                presence: true,
-                email: true
-            },
-            phone: {
-                phone: true
-            },
-            message: {
-                presence: true,
-                maxLength: 1000,
-            },
-            attach: {
-                size: '2048', //Kb
-                ext: ['jpg', 'png', 'pdf']
-            },
-        }
-    }
+The form requires 2 mandatory parameters
+1) form - selector or HTML element
+2) constraints - description of all mandatory fields
+Form example
+{
+form: '#form-main',
+constraints: {
+name: {
+presence: true
+},
+email: {
+presence: true,
+email: true
+},
+phone: {
+phone: true
+},
+message: {
+presence: true,
+maxLength: 1000,
+},
+attach: {
+size: '2048', //Kb
+ext: ['jpg', 'png', 'pdf']
+},
+}
+}
 
-Описание свойств
-У каждого типа инпута свои валидаторы.
+Property description
+Each input type has its own validators.
 
-    type="text" || type="textarea"
-        presence - обязательное поле
-        maxLength - максимальная длина поля
-        email - проверяет почту на корректность ввода
-        phone - проверяет телефон регулярным выражением, ожидаемый формат: +7(000)0000000 все пробелы будут удалены из строки при проверке
+type="text" || type="textarea"
+presence - required field
+maxLength - maximum field length
+email - checks email for correct input
+phone - checks phone with regular expression, expected format: +7(000)0000000 all spaces will be removed from the string during verification
 
-    type="file"
-        presence - обязательно поле
-        size - максимальный размер файла в kb
-        ext - массив допустимых типов для файла
+type="file"
+presence - required field
+size - maximum file size in kb
+ext - array of valid file types
 
-    type="password"
-        presence - обязательное поле
-        sync - name инпута внутри формы, с которым нужно сравнивать основной пароль
+type="password"
+presence - required field
+sync - name of input inside the form with which the main password should be compared
 
+Data attributes are added to the necessary elements of the inputs:
+data-input={name} - key input container. All other elements must be inside the element with this attribute.
+This element will be assigned classes is-error is-filled is-success etc., and the attribute data-error-type will also be added, which indicates the error type (presence, maxLength etc.)
+data-error={name} - the error message will be written here
+data-reset-file - file clear button
+data-filenames - place to write the names of added files
+data-form-response - contents of the message field in the response from the API
 
-Необходимым элементам у инпутов добавляются дата-аттрибуты:
-data-input={name} - ключевой контейнер инпута. Все остальные элементы должны находиться внутри элемента с этим аттрибутом.
-Этому элементу будут ставиться классы is-error is-filled is-success и тд, так же будет добавляться аттрибут data-error-type, который указывает на тип ошибки (presence, maxLength и тд)
-data-error={name} - сюда будет записано сообщение об ошибке
-data-reset-file - кнопка очистки файла
-data-filenames - место записи названия добавленных файлов
-data-form-response - содержимое поля message в ответе от апи
-
-Для проверки файлов указывать реальный тип данных файла, не рсширение!
-Возможные типы данных:
+To check files, specify the actual file data type, not the extension!
+Possible data types:
 1. image/svg+xml - .svg
 2. image/jpeg - .jpg || .jpeg
 3. image/png - .png
 4. application/pdf - .pdf
 */
-
-
-// DONE: Прелоадер формы
-// DONE: Обработку двойного поля паролей
-// DONE: Чекбоксы проверять
-// DONE: Реализовать группировку полей
 
 const escapeHtml = (unsafe) => {
     return unsafe
@@ -337,6 +330,8 @@ class Form {
     }
 
     onChange = (target, e) => {
+        this.formResponse.innerText = '';
+
         const errors = this.validateField(target, this.options.constraints[target.name]);
 
         if (errors.length) {
@@ -373,7 +368,7 @@ class Form {
         }
 
         if (this.options.onSubmit) {
-            return this.options.onSubmit(e);
+            return this.options.onSubmit(e, this.form);
         }
 
         this.formResponse.innerText = '';
@@ -386,7 +381,10 @@ class Form {
             if (this.form.getAttribute('method')?.toLowerCase() === 'post') {
                 params = {
                     method: 'POST',
-                    body: new FormData(this.form)
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(formDataToObject(new FormData(this.form)))
                 }
             } else {
                 //get request, do nothing
@@ -401,14 +399,8 @@ class Form {
                 .catch(r => {
                     return {
                         code: 500,
-                        message: 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже',
+                        message: 'There was an error sending the form. Please try again later',
                     }
-
-                    /* {
-                        code: 200,
-                        redirect: '/profile',
-                        message: 'Данные отправлены, спасибо',
-                    } */
                 });
 
 
@@ -462,7 +454,7 @@ class Form {
                 this.clearForm();
             }
 
-            this.options.afterSubmit && this.options.afterSubmit({ code: 200, message: 'Успех' }, this);
+            this.options.afterSubmit && this.options.afterSubmit({ code: 200, message: 'Success' }, this);
 
             e.preventDefault();
             return false;
