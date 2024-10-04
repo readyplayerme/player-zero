@@ -28,8 +28,7 @@ export default class Popup {
 				this.closeAll();
 			}
 
-
-			if (!event.target.closest('[data-elts="popupBtn"]')) {
+			if (event.target.closest('[data-elts="popup"]')) {
 				const inside = event.target.closest('.popup__main');
 
 				if (!inside) {
