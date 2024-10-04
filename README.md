@@ -31,6 +31,11 @@ Player Zero is a landing for https://readyplayer.me
    ```
 2. Update `.env` with the appropriate configuration values.
 
+3. Add port in `.env` file if required
+```bash
+PORT=3005
+```
+
 ## Running the Application
 
 Start the development server:
@@ -49,11 +54,6 @@ To launch in production mode with server to use Sendgrid
 Install pm2 globally
 ```bash
 npm install pm2 -g
-```
-
-Add port in `.env` file if required
-```bash
-PORT=3005
 ```
 
 Run server
