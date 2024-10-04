@@ -7,21 +7,6 @@ const Footer = ({}) => {
                         <a href="" class="footer__logo">
                             <img src="/assets/images/icons/logo-footer.svg" alt="Player Zero" />
                         </a>
-                        {/* <div class="footer__logos">
-                            <a href="" class="footer__logo footer__logo--pz">
-                                <svg class="svg-icon" viewBox="0 0 200 72" width="150" height="54"><use xlink:href="#svg-logo"></use></svg>
-                                <span>by Ready Player Me</span>
-                            </a>
- 
-                            <div class="footer__logo-text">
-                                <span>by Ready Player Me</span>
-                            </div>
-
-                            <a href="" class="footer__logo footer__logo--rpm">
-                                <span>Built by</span>
-                                <img src="/assets/images/icons/logo-rpm-white.svg" alt="Ready player me" />
-                            </a>
-                        </div> */}
 					</div>
 
 					<div class="footer__col footer__col--menu">
@@ -31,8 +16,7 @@ const Footer = ({}) => {
                                 <li class="footer__item"><a href="#process" class="footer__link" data-elts="scrollLink"><span>How it Works</span></a></li>
                                 <li class="footer__item"><a href="#about" class="footer__link" data-elts="scrollLink"><span>About Us</span></a></li>
                                 <li class="footer__item"><a href="#faq" class="footer__link" data-elts="scrollLink"><span>FAQ</span></a></li>
-                                <li class="footer__item"><a href="https://readyplayer.me/terms" class="footer__link" target='_blank'><span>Terms of Use</span></a></li>
-                                <li class="footer__item"><a href="https://readyplayer.me/privacy-policy" target='_blank' class="footer__link"><span>Privacy Policy</span></a></li>
+                                <li class="footer__item"><a href="https://drive.google.com/file/d/1-Aq8Zm_v5Sfyl9tRypI8-lSObstRwOka/view?usp=sharing" class="footer__link" target='_blank'><span>Collectible Terms</span></a></li>
                             </ul>
                         </nav>
 					</div>
