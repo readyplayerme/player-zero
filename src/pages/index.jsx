@@ -344,14 +344,14 @@ export default async ({ data }) => {
                                 <div class="faq__item">
                                     <div class="faq-card" data-elts="accordion">
                                         <div class="faq-card__top" data-elts="accordionBtn">
-                                            <h3 class="faq-card__title">Is the product live?</h3>
+                                            <h3 class="faq-card__title">When does the platform launch?</h3>
                                             <div class="faq-card__arrow">
                                                 <svg class="svg-icon" viewBox="0 0 22 22" width="22" height="22"><use xlink:href="#svg-arrow-down"></use></svg>
                                             </div>
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">Yes, the product is live today. You can create an avatar and play games on playerzero.me.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">The platform is coming very soon.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -359,14 +359,44 @@ export default async ({ data }) => {
                                 <div class="faq__item">
                                     <div class="faq-card" data-elts="accordion">
                                         <div class="faq-card__top" data-elts="accordionBtn">
-                                            <h3 class="faq-card__title">When is the reveal?</h3>
+                                            <h3 class="faq-card__title">Where will the packs be minted?</h3>
                                             <div class="faq-card__arrow">
                                                 <svg class="svg-icon" viewBox="0 0 22 22" width="22" height="22"><use xlink:href="#svg-arrow-down"></use></svg>
                                             </div>
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">The reveal happens soon after the mint closes.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">The packs will be minted on OpenSea.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="faq__item">
+                                    <div class="faq-card" data-elts="accordion">
+                                        <div class="faq-card__top" data-elts="accordionBtn">
+                                            <h3 class="faq-card__title">And when is the reveal?</h3>
+                                            <div class="faq-card__arrow">
+                                                <svg class="svg-icon" viewBox="0 0 22 22" width="22" height="22"><use xlink:href="#svg-arrow-down"></use></svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="faq-card__drop" data-elts="accordionDrop">
+                                            <div class="faq-card__content" data-elts="accordionContent">Soon after the mint is over, the packs will change into avatar cosmetics.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="faq__item">
+                                    <div class="faq-card" data-elts="accordion">
+                                        <div class="faq-card__top" data-elts="accordionBtn">
+                                            <h3 class="faq-card__title">What kind of assets can I get from packs?</h3>
+                                            <div class="faq-card__arrow">
+                                                <svg class="svg-icon" viewBox="0 0 22 22" width="22" height="22"><use xlink:href="#svg-arrow-down"></use></svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="faq-card__drop" data-elts="accordionDrop">
+                                            <div class="faq-card__content" data-elts="accordionContent">The packs will reveal an avatar collectible you can use on your avatar and in games and on socials. The assets come in many different rarities. If you’re lucky, you might get something rare.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -381,22 +411,7 @@ export default async ({ data }) => {
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">The reveal happens soon after the mint closes.</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="faq__item">
-                                    <div class="faq-card" data-elts="accordion">
-                                        <div class="faq-card__top" data-elts="accordionBtn">
-                                            <h3 class="faq-card__title">What kind of assets can I get from the packs?</h3>
-                                            <div class="faq-card__arrow">
-                                                <svg class="svg-icon" viewBox="0 0 22 22" width="22" height="22"><use xlink:href="#svg-arrow-down"></use></svg>
-                                            </div>
-                                        </div>
-
-                                        <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">The packs will reveal an avatar collectible you can use on your avatar and in games and on socials. The assets come in many different rarities. If you’re lucky, you might get something rare.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">Once the platform launches, you will be able to fully build your avatar.</div>
                                         </div>
                                     </div>
                                 </div>
