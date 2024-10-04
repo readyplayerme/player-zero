@@ -16,7 +16,7 @@ const Footer = ({}) => {
                                 <li class="footer__item"><a href="#process" class="footer__link" data-elts="scrollLink"><span>How it Works</span></a></li>
                                 <li class="footer__item"><a href="#about" class="footer__link" data-elts="scrollLink"><span>About Us</span></a></li>
                                 <li class="footer__item"><a href="#faq" class="footer__link" data-elts="scrollLink"><span>FAQ</span></a></li>
-                                <li class="footer__item"><a href="https://drive.google.com/file/d/1-Aq8Zm_v5Sfyl9tRypI8-lSObstRwOka/view?usp=sharing" class="footer__link" target='_blank'><span>Collectible Terms</span></a></li>
+                                <li class="footer__item"><a href="/assets/file/ready-player-me-collectibles-terms.pdf" type="file" class="footer__link" target='_blank'><span>Collectible Terms</span></a></li>
                             </ul>
                         </nav>
 					</div>
