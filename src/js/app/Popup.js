@@ -13,6 +13,11 @@ export default class Popup {
 
 		this.openedPopups = [];
 
+		document.body.addEventListener('keydown', (event) => {
+			console.log('event', );
+			if (event.keyCode === 27) this.closeAll();
+		});
+
 		document.body.addEventListener('click', (event) => {
 			const open = event.target.closest('[data-elts~="popupBtn"]');
 
