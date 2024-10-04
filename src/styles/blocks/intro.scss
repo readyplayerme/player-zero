@@ -1,20 +1,5 @@
-// @include webfont('FF', 'filename');
-
-@keyframes flow {
-	0% {
-		background-position: 0% 0;
-	}
-
-	100% {
-		background-position: calc(100% - 100vw) 0;
-	}
-}
-
 .intro {
-	// background: $black url(../images/intro-bg.png) 50% 0 no-repeat;
 	background-color: $black;
-	// background-size: cover;
-	// background-blend-mode: lighten;
 	position: relative;
 	min-height: calc(var(--vh, 1vh)* 100);
 
