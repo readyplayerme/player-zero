@@ -133,7 +133,7 @@ export default async ({ data }) => {
                                     <div class="intro__button">
                                         <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button>
                                     </div>
-                                    
+
                                     <div class="intro__button">
                                         <button class="button button--border" type="button" data-elt="showFormAnim">Notify Me</button>
                                     </div>
@@ -146,6 +146,9 @@ export default async ({ data }) => {
                                         <div class="form__field form__field--input" data-input="email">
                                             <input type="text" name="email" class="form__input" placeholder="YOUR E-MAIL"/>
                                             <div class="form-message" data-error="email"></div>
+                                            <div class="form__agreement">
+                                                By subscribing, you agree to receive marketing information from Ready Player Me and accept the terms of our <a href="https://readyplayer.me/privacy-policy" target='_blank'>Privacy Policy</a>
+                                            </div>
                                         </div>
 
                                         <div class="form__field form__field--button">

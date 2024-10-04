@@ -51,7 +51,7 @@ const Footer = ({}) => {
                                         <div class="form-message" data-error></div>
 
                                         <div class="form__agreement">
-                                            By subscribing you are accepting to receive marketing information from Player Zero and agree to the terms of our <a href="https://readyplayer.me/privacy-policy" target='_blank'>Privacy Policy</a>
+                                            By subscribing, you agree to receive marketing information from Ready Player Me and accept the terms of our <a href="https://readyplayer.me/privacy-policy" target='_blank'>Privacy Policy</a>
                                         </div>
                                     </div>
 
