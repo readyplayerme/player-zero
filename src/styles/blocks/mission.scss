@@ -1,8 +1,6 @@
 .mission {
 	position: relative;
-	/* background: $black url(/assets/images/mission-bg.png) 50% 0 no-repeat;
-	background-size: cover;
-	background-blend-mode: lighten; */
+
 	&::before {
 		content: '';
 		pointer-events: none;
