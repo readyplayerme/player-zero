@@ -117,6 +117,10 @@ class App {
 			this.toggleNav(this.body);
 		});
 
+		window.addEventListener('resizle', () => {
+			this.isMobile = this.width < 1024;
+		});
+
 		this.DOM.scrollLink?.forEach((el, i) => {
 			el.addEventListener('click', (e) => {
 				let link = el.getAttribute('href');
