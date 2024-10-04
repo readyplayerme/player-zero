@@ -119,14 +119,6 @@
 			height: 200rem;
 		}
 	}
-
-	/* &__scroll {
-		display: flex;
-		align-items: center;
-		gap: 10rem;
-		margin-left: 40rem;
-		@include body-m();
-	} */
 }
 
 @media only screen and (max-width: $small) {
@@ -187,10 +179,6 @@
 			&.is-open form {
 				height: 100rem;
 			}
-		}
-
-		&__scroll {
-			display: none;
 		}
 	}
 }

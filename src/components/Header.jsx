@@ -4,7 +4,6 @@ const Header = ({children, data}) => {
 			<div class="header__wrap">
 				<a href="" class="header__logo">
                     <video muted loop playsinline autoplay src="/assets/images/logo-dynamic.mp4" type="video/mp4"></video>
-					{/* <svg class="svg-icon" viewBox="0 0 200 72" width="200" height="72"><use xlink:href="#svg-logo"></use></svg> */}
 				</a>
 
 				<div class="header__nav">

@@ -5,8 +5,6 @@
 		@include grid-container();
 	}
 
-	&__wrap {}
-
 	&__top {
 		margin-bottom: 140rem;
 	}
@@ -21,11 +19,6 @@
 	}
 
 	&__image {
-		/* position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 75%;
-		transform: translate(-5%, 0); */
 		width: 75%;
 		margin-top: -50rem;
 
@@ -35,43 +28,12 @@
 	}
 
 	&__message {
-		/* margin-left: auto;
-		position: relative;
-		z-index: 1;
-		@include grid-col(6,12); */
 		position: absolute;
 		right: 0;
 		top: 5%;
 		width: 45%;
 		max-width: 532rem;
 	}
-
-	/* &__logo {
-		color: $pink;
-		line-height: 0;
-		text-align: center;
-		margin-bottom: 100rem;
-
-		.svg-icon {
-			width: 400rem;
-			height: 144rem;
-		}
-	}
-
-	&__text {
-		max-width: 50%;
-		margin: 0 auto;
-		text-align: center;
-		@include body-l();
-	}
-
-	&__image {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: -1;
-	} */
 }
 
 .homepage-message {
@@ -116,25 +78,6 @@
 
 @media only screen and (max-width: $small) {
 	.homepage {
-		/* &__wrap {
-			padding: 64rem 0 140rem;
-		}
-
-		&__logo {
-			margin-bottom: 32rem;
-
-			.svg-icon {
-				width: 160rem;
-				height: auto;
-			}
-		}
-
-
-		&__image {
-			left: -16rem;
-			right: -16rem;
-		} */
-
 		&__top {
 			margin-bottom: 32rem;
 		}
