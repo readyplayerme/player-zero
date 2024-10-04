@@ -14,8 +14,7 @@ export default class Popup {
 		this.openedPopups = [];
 
 		document.body.addEventListener('keydown', (event) => {
-			console.log('event', );
-			if (event.keyCode === 27) this.closeAll();
+			if (event.key === 'Escape') this.closeAll();
 		});
 
 		document.body.addEventListener('click', (event) => {
