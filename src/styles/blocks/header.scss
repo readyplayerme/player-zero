@@ -26,6 +26,7 @@
 	&__logo {
 		width: 200rem;
 		flex-shrink: 0;
+		display: inline-flex;
 		position: relative;
 		z-index: 2;
 
