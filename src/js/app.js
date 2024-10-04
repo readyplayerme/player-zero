@@ -74,7 +74,7 @@ class App {
 	}
 
 	init = () => {
-		const countdownDate = new Date("October 8, 2024 17:00:00").getTime();
+		/* const countdownDate = new Date("October 8, 2024 17:00:00").getTime();
 		const leadingZero = (v) => v < 10 ? '0' + v.toString() : v;
 		const count = () => {
 			const now = new Date().getTime(); // Текущее время
@@ -96,7 +96,7 @@ class App {
 		}
 		const updateTimer = setInterval(count, 1000);
 
-		count();
+		count(); */
 
 		setTimeout(() => {
 			this.setHeaderScrollClass(this.scroll);
