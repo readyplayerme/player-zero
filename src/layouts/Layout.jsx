@@ -35,7 +35,7 @@ const Layout = ({ children, title, bodyClass }) => {
 
             <link href={`/assets/styles/styles.css?v=${+new Date()}`} rel="stylesheet" />
             <script src={`/assets/js/head.js?v=${+new Date()}`}></script>
-            <script __html={`
+            <script __raw={`
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
