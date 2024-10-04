@@ -60,9 +60,9 @@ jobs:
         --header='Content-Type:application/json' \
         --post-data='[{"task": "buildProject"}, ${{env.DATA}}]'
 
-    # - name: Restart pm2
-    #   run: |
-    #     wget --content-on-error -qO- \
-    #     ${{env.ENDPOINT}} \
-    #     --header='Content-Type:application/json' \
-    #     --post-data='[{"task": "pm2Restart"}, ${{env.DATA}}]'
+    - name: Restart pm2
+      run: |
+        wget --content-on-error -qO- \
+        ${{env.ENDPOINT}} \
+        --header='Content-Type:application/json' \
+        --post-data='[{"task": "pm2Restart"}, ${{env.DATA}}]'
