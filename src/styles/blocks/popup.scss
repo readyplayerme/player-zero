@@ -22,11 +22,13 @@
 	}
 
 	&__box {
+		overflow: hidden;
 		position: relative;
 		max-width: 1470rem;
 		margin: auto;
 		height: 100%;
 		aspect-ratio: 16 / 9;
+		padding: 0 50rem;
 		display: flex;
 		justify-content: center;
 	}
@@ -34,8 +36,9 @@
 	&__close {
 		position: absolute;
 		top: 0;
-		right: -60rem;
+		right: 0rem;
 		width: 40rem;
+		z-index: 3;
 		height: 40rem;
 		display: flex;
 		color: $violet;
@@ -69,9 +72,14 @@
 	.popup {
 		padding: 10rem 16rem;
 
+		&__box {
+			width: 100%;
+			padding: 0;
+		}
+
 		&__close {
 			right: 0;
-			top: -30rem;
+			top: 10rem;
 			width: 24rem;
 			height: 24rem;
 
