@@ -29,7 +29,7 @@ export default class Popup {
 			}
 
 			if (event.target.closest('[data-elts="popup"]')) {
-				const inside = event.target.closest('.popup__main');
+				const inside = event.target.closest('video');
 
 				if (!inside) {
 					event.preventDefault();
