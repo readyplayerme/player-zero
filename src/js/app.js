@@ -74,13 +74,14 @@ class App {
 	}
 
 	init = () => {
-		const countdownDate = new Date("October 8, 2024 17:00:00").getTime();
+		const countdownDate = new Date('2024-10-08T17:00:00Z');
+
 		const leadingZero = (v) => v < 10 ? '0' + v.toString() : v;
 		const count = () => {
-			const now = new Date().getTime(); // Текущее время
-			const timeRemaining = countdownDate - now; // Оставшееся время
+			const now = new Date().getTime(); // Current time
+			const timeRemaining = countdownDate.getTime() - now; // Time remaining
 
-			const totalHours = Math.floor(timeRemaining / (1000 * 60 * 60)); // Общее количество часов
+			const totalHours = Math.floor(timeRemaining / (1000 * 60 * 60)); // Overall hours count
 			const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
 			const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
@@ -91,10 +92,10 @@ class App {
 			// Если время истекло
 			if (timeRemaining < 0) {
 				clearInterval(updateTimer);
-				console.log("Время вышло!");
+				console.log('Time is up!');
 			}
 		}
-		
+
 		const updateTimer = setInterval(count, 1000); // set interval
 		count(); // instant set timer
 
