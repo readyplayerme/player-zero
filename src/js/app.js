@@ -110,7 +110,7 @@ class App {
 		window.addEventListener('load', this.handleLoadEvent);
 		window.addEventListener('scroll', this.handleScrollEvent, { passive: true });
 
-		this.DOM.showFormAnim.addEventListener('click', () => {
+		this.DOM.showFormAnim?.addEventListener('click', () => {
 			this.DOM.formAnim.classList.toggle('is-open');
 		})
 

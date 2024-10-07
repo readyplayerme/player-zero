@@ -55,27 +55,30 @@ export default async ({ data }) => {
                                     </div>
                                 </div>
 
-                                <div class="intro__subtitle">Don’t miss the launch</div>
+                                {/* <div class="intro__subtitle">Don’t miss the launch</div> */}
+
+                                <div class="intro__button">
+                                    <button class="button-play" data-elts="popupBtn" data-popup="video">
+                                        <i></i>
+                                        {/* <svg class="svg-icon svg-icon--icon" viewBox="0 0 105 43" width="105" height="43"><use xlink:href="#svg-play-icon"></use></svg>
+                                        <svg class="svg-icon svg-icon--text" viewBox="0 0 101 38" width="101" height="38"><use xlink:href="#svg-play-text"></use></svg> */}
+                                        <span>Play</span><span>Trailer</span>
+                                    </button>
+
+                                    {/* <div class="intro__line"></div> */}
+                                </div>
                             </div>
 
                             <div className="intro__bottom">
                                 <div class="intro__controls">
-                                    <div class="intro__play">
-                                        <button class="button-play" data-elts="popupBtn" data-popup="video">
-                                            <i></i>
-                                            <svg class="svg-icon svg-icon--icon" viewBox="0 0 105 43" width="105" height="43"><use xlink:href="#svg-play-icon"></use></svg>
-                                            <svg class="svg-icon svg-icon--text" viewBox="0 0 101 38" width="101" height="38"><use xlink:href="#svg-play-text"></use></svg>
-                                        </button>
-
-                                        <div class="intro__line"></div>
+                                    <div class="intro__button">
+                                        <a href="https://playerzero.readyplayer.me" target="_blank" class="button"><span>Launch The App</span></a>
+                                        {/* <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button> */}
                                     </div>
 
                                     <div class="intro__button">
-                                        <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button>
-                                    </div>
-
-                                    <div class="intro__button">
-                                        <button class="button button--border" type="button" data-elt="showFormAnim">Notify Me</button>
+                                        <a href="https://opensea.io/collection/collection-zero-by-player-zero/overview" target="_blank" class="button button--border"><span>Check Out the Launch</span></a>
+                                        {/* <button class="button button--border" type="button" data-elt="showFormAnim">Notify Me</button> */}
                                     </div>
                                 </div>
                             </div>
@@ -351,7 +354,7 @@ export default async ({ data }) => {
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">The platform is coming very soon.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">It is live right now!</div>
                                         </div>
                                     </div>
                                 </div>
@@ -366,7 +369,7 @@ export default async ({ data }) => {
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">The packs will be minted on OpenSea.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">The packs are being minted on OpenSea.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -411,7 +414,7 @@ export default async ({ data }) => {
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">Once the platform launches, you will be able to fully build your avatar.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">Go to <a href="https://playerzero.readyplayer.me" target='_blank'><span>https://playerzero.readyplayer.me</span></a> to fully build your avatar.</div>
                                         </div>
                                     </div>
                                 </div>

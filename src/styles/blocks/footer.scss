@@ -57,6 +57,12 @@
 		transition: opacity .3s;
 		@include body-m();
 	}
+
+	&__socials {
+		.socials {
+			flex-wrap: wrap;
+		}
+	}
 }
 
 @media only screen and (hover: hover) {

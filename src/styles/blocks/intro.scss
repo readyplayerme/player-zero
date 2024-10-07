@@ -119,6 +119,16 @@
 			height: 200rem;
 		}
 	}
+
+	&__countdown {
+		display: none;
+	}
+
+	&__button {
+		.button {
+			min-width: 300rem;
+		}
+	}
 }
 
 @media only screen and (max-width: $small) {
@@ -140,7 +150,7 @@
 
 		&__title {
 			max-width: 336rem;
-			margin-bottom: 16rem;
+			margin-bottom: 32rem;
 			font-size: 96rem;
 			line-height: 0.8;
 		}
@@ -150,11 +160,11 @@
 		}
 
 		&__bottom {
-			margin-top: 32rem;
+			margin-top: 16rem;
 		}
 
 		&__controls {
-			margin-top: 144rem;
+			//margin-top: 144rem;
 			flex-direction: column;
 			gap: 16rem;
 		}

@@ -32,21 +32,31 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 16rem;
+	//gap: 16rem;
 	aspect-ratio: 1;
 	border-radius: 50%;
-	padding: 53rem 46rem;
+	padding: 53rem 30rem;
 	min-width: 166rem;
 	color: rgba($white100, .8);
 	background-color: #2C2B5D;
 	overflow: hidden;
-	@include button();
+
+	/* @include button(); */
 
 	svg {
 		position: relative;
 		z-index: 2;
 		width: 73rem;
 		height: auto;
+	}
+
+	span {
+		position: relative;
+		z-index: 2;
+		font-family: $fontDrukX;
+		text-transform: uppercase;
+		font-size: 30rem;
+		letter-spacing: 0.2em;
 	}
 
 	&::before {

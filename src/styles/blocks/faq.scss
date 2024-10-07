@@ -84,6 +84,13 @@
 
 	&__content {
 		padding-top: 16rem;
+
+		a {
+			span {
+				border-bottom: 1rem solid currentColor;
+				transition: border-color .3s;
+			}
+		}
 	}
 
 	&.is-open {
@@ -100,6 +107,16 @@
 		&__top {
 			&:hover {
 				opacity: .7	;
+			}
+		}
+
+		&__content {
+			a {
+				&:hover {
+					span {
+						border-color: transparent;
+					}
+				}
 			}
 		}
 	}
