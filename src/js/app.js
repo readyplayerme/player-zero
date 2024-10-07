@@ -95,8 +95,8 @@ class App {
 			}
 		}
 		
-		// const updateTimer = setInterval(count, 1000); // set interval
-		// count(); // instant set timer
+		const updateTimer = setInterval(count, 1000); // set interval
+		count(); // instant set timer
 
 		setTimeout(() => {
 			this.setHeaderScrollClass(this.scroll);
