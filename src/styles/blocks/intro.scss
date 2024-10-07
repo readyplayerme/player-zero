@@ -73,7 +73,7 @@
 	}
 
 	&__bottom {
-		margin-top: 50rem;
+		//margin-top: 50rem;
 		text-align: center;
 	}
 
@@ -128,6 +128,10 @@
 		.button {
 			min-width: 300rem;
 		}
+
+		&:nth-child(2) {
+			order: -1;
+		}
 	}
 }
 
@@ -160,7 +164,7 @@
 		}
 
 		&__bottom {
-			margin-top: 16rem;
+			//margin-top: 16rem;
 		}
 
 		&__controls {
@@ -188,6 +192,12 @@
 
 			&.is-open form {
 				height: 140rem;
+			}
+		}
+
+		&__button {
+			&:nth-child(2) {
+				order: 0;
 			}
 		}
 	}
