@@ -31,6 +31,10 @@ const Layout = ({ children, title, bodyClass }) => {
             <meta name="msapplication-wide310x150logo" content="/assets/favicons/mstile-310x150.png" />
             <meta name="msapplication-square310x310logo" content="/assets/favicons/mstile-310x310.png" />
 
+            <meta property="og:title" content="Avatar Collectible Platform" />
+            <meta property="og:description" content="We are the avatar collectible platform of the future, empowering users to create, customize and evolve their digital identities that can immediately be used to play games and explore endless virtual worlds." />
+            <meta property="og:image" content="/assets/images/covers/cover.jpeg"></meta>
+
             <title>{title}</title>
 
             <link href={`/assets/styles/styles.css?v=${+new Date()}`} rel="stylesheet" />
