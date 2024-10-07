@@ -33,7 +33,13 @@ const Layout = ({ children, title, bodyClass }) => {
 
             <meta property="og:title" content="Avatar Collectible Platform" />
             <meta property="og:description" content="We are the avatar collectible platform of the future, empowering users to create, customize and evolve their digital identities that can immediately be used to play games and explore endless virtual worlds." />
-            <meta property="og:image" content="/assets/images/covers/cover.jpeg"></meta>
+            <meta property="og:image" content="https://playerzero.me/assets/covers/cover.png"></meta>
+
+            <meta property="twitter:title" content="Avatar Collectible Platform" />
+            <meta property="twitter:description" content="We are the avatar collectible platform of the future, empowering users to create, customize and evolve their digital identities that can immediately be used to play games and explore endless virtual worlds." />
+            <meta property="twitter:image" content="https://playerzero.me/assets/covers/cover.png"></meta>
+
+            <meta property="image" content="https://playerzero.me/assets/covers/cover.png"></meta>
 
             <title>{title}</title>
 
