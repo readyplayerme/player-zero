@@ -74,7 +74,7 @@ class App {
 	}
 
 	init = () => {
-		const countdownDate = new Date('2024-10-08T17:00:00Z');
+		const countdownDate = new Date('2024-10-08T16:00:00Z');
 
 		const leadingZero = (v) => v < 10 ? '0' + v.toString() : v;
 		const count = () => {
