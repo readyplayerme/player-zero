@@ -6,7 +6,6 @@ import { prettify } from 'htmlfy';
 import chalk from 'chalk';
 import { injectLivereloader } from '../../.ancros/render.js';
 
-import helmet from 'helmet';
 import bodyParser from 'body-parser';
 import { Client } from '@sendgrid/client';
 import 'dotenv/config';
@@ -19,7 +18,6 @@ process.env.URL = process.env.URL || 'http://localhost:' + port;
 const app = express();
 let server = app;
 
-process.env.NODE_ENV === 'production' && app.use(helmet());
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
