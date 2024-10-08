@@ -498,7 +498,7 @@ export default async ({ data }) => {
                 <div class="popup__main">
                     <div class="popup__video">
                         <div class="video">
-                            <video loop playsinline src="/assets/images/trailer-new-short.mp4" type="video/mp4"></video>
+                            <video loop playsinline src="/assets/images/trailer-new.mp4" type="video/mp4"></video>
                         </div>
                     </div>
                 </div>
