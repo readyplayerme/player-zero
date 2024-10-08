@@ -128,10 +128,6 @@
 		.button {
 			min-width: 250rem;
 		}
-
-		&:nth-child(2) {
-			order: -1;
-		}
 	}
 }
 
@@ -154,7 +150,7 @@
 
 		&__title {
 			max-width: 336rem;
-			margin-bottom: 32rem;
+			margin-bottom: 16rem;
 			font-size: 96rem;
 			line-height: 0.8;
 		}
@@ -192,12 +188,6 @@
 
 			&.is-open form {
 				height: 140rem;
-			}
-		}
-
-		&__button {
-			&:nth-child(2) {
-				order: 0;
 			}
 		}
 	}
