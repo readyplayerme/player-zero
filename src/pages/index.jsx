@@ -198,7 +198,8 @@ export default async ({ data }) => {
                                                 <div class="process-card__title">Customize your avatar</div>
                                             </div>
 
-                                            <button class="process__button button" data-elts="popupBtn" data-popup="process3">See it in action</button>
+                                            <a href="https://playerzero.readyplayer.me" target='_blank' class="process__button button"><span>See it in action</span></a>
+                                            {/* <button class="process__button button" data-elts="popupBtn" data-popup="process3"></button> */}
                                         </div>
                                     </div>
 
