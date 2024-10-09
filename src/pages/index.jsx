@@ -60,6 +60,7 @@ export default async ({ data }) => {
                             </div>
 
                             <div className="intro__bottom">
+
                                 <div class="intro__controls">
                                     <div class="intro__button">
                                         <button class="button-play" data-elts="popupBtn" data-popup="video">
@@ -70,6 +71,11 @@ export default async ({ data }) => {
                                         </button>
 
                                         {/* <div class="intro__line"></div> */}
+                                    </div>
+
+                                    <div class="intro__button">
+                                        <a href="https://playerzero.readyplayer.me" target="_blank" class="button"><span>Launch The App</span></a>
+                                        {/* <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button> */}
                                     </div>
 
                                     <div class="intro__button">
