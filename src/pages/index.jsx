@@ -372,7 +372,7 @@ export default async ({ data }) => {
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">The packs are being minted on OpenSea.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">The packs were minted on OpenSea and already opened. Go look for the actual cosmetic items at <a href="https://opensea.io/collection/collection-zero-by-player-zero/overview" target='_blank'><span>https://opensea.io/collection/collection-zero-by-player-zero/overview</span></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -387,7 +387,7 @@ export default async ({ data }) => {
                                         </div>
 
                                         <div class="faq-card__drop" data-elts="accordionDrop">
-                                            <div class="faq-card__content" data-elts="accordionContent">Soon after the mint is over, the packs will change into avatar cosmetics.</div>
+                                            <div class="faq-card__content" data-elts="accordionContent">The reveal has already happened! Go look for the items at <a href="https://opensea.io/collection/collection-zero-by-player-zero/overview" target='_blank'><span>https://opensea.io/collection/collection-zero-by-player-zero/overview</span></a></div>
                                         </div>
                                     </div>
                                 </div>
