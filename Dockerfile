@@ -16,5 +16,6 @@ COPY --from=builder /app/ecosystem.config.cjs /app/ecosystem.config.cjs
 COPY --from=builder /app/jtsx.config.example.js /app/jtsx.config.example.js
 COPY --from=builder /app/jtsx.config.example.js /app/jtsx.config.example.js
 
+RUN npm install pm2 -g
 
-CMD ["npm", "run", "server"]
+CMD ["pm2-runtime", "start", "ecosystem.config.cjs"]
