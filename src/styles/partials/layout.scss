@@ -29,18 +29,6 @@ body {
 
 .main {
     @include verticalStretch();
-
-    &__button {
-        position: sticky;
-        bottom: 32rem;
-        margin-bottom: 100rem;
-        text-align: center;
-        z-index: 10;
-
-        .button {
-            min-width: 250rem;
-        }
-    }
 }
 
 .is-hidden {
@@ -57,13 +45,4 @@ body {
 
 .h3 {
     
-}
-
-@media only screen and (max-width: $small) {
-    .main {
-        &__button {
-            bottom: 16rem;
-            margin-bottom: 64rem;
-        }
-    }
 }

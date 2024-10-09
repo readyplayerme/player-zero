@@ -9,7 +9,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 1;
+		z-index: 3;
 		mix-blend-mode: hard-light;
 		background: url(/assets/images/line_playerzero_compressed.png) 0% 0 repeat-x;
 		animation: flow 12s linear infinite forwards;
@@ -22,7 +22,7 @@
 	}
 
 	&__wrap {
-		padding: 140rem 0 100rem;
+		padding: 140rem 0;
 		text-align: center;
 	}
 
@@ -70,7 +70,7 @@
 @media only screen and (max-width: $small) {
 	.mission {
 		&__wrap {
-			padding: 64rem 0 40rem;
+			padding: 64rem 0;
 		}
 
 		&__title {
