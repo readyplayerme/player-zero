@@ -73,7 +73,7 @@
 		.hover {
 			color: $blue;
 			font-family: $fontDrukX;
-			letter-spacing: .4em;
+			letter-spacing: .2em;
 			font-size: 30rem;
 			transition: opacity .3s;
 			opacity: 0;
@@ -111,7 +111,7 @@
 	}
 }
 
-@media only screen and (max-width: $medium) {
+/* @media only screen and (max-width: $medium) {
 	.nav {
 		&__list {
 			.hover {
@@ -120,9 +120,9 @@
 			}
 		}
 	}
-}
+} */
 
-@media only screen and (max-width: $small) {
+@media only screen and (max-width: $medium) {
 	.nav {
 		position: fixed;
 		top: 0;
@@ -133,6 +133,7 @@
 		background-color: #000;
 		padding: 80rem 16rem 40rem;
 		transition: transform .3s;
+		z-index: 1;
 
 		&__bg {
 			display: none;

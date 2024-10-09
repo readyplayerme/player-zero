@@ -43,9 +43,9 @@
 	}
 
 	&__socials {
-		margin-left: 24rem;
-		position: relative;
-		z-index: 2;
+		text-align: center;
+		transform: translateY(60rem);
+		line-height: 0;
 	}
 
 	&__burger {
@@ -56,6 +56,7 @@
         width: 40rem;
         height: 40rem;
 		margin-left: 16rem;
+		cursor: pointer;
 
         span {
             position: absolute;
@@ -77,6 +78,19 @@
             }
         }
 	}
+
+	&__controls {
+		margin-left: 24rem;
+		min-width: 236rem;
+		flex-shrink: 0;
+	}
+
+	&__button {
+		position: fixed;
+		top: 60rem;
+		right: 48rem;
+		z-index: 5;
+	}
 }
 
 @media only screen and (hover: hover) {
@@ -94,6 +108,35 @@
 		&__logo {
 			width: 140rem;
 		}
+
+		&__button {
+			top: 46rem;
+		}
+	}
+}
+
+@media only screen and (max-width: $medium) {
+	.header {
+		&__burger {
+			display: flex;
+		}
+
+		&__nav {
+			width: 0;
+		}
+
+		&__controls {
+			margin: 0 auto;
+		}
+
+		&__socials {
+			transform: translate(-35rem, 60rem);
+		}
+
+		&__button {
+			right: 50%;
+			transform: translate(50%, -2rem);
+		}
 	}
 }
 
@@ -107,12 +150,37 @@
 			width: 90rem;
 		}
 
-		&__socials {
-			margin-left: 16rem;
+		&__controls {
+			min-width: unset;
 		}
 
-		&__burger {
-			display: flex;
+		&__button {
+			transform: translate(50%, -26rem);
+
+			.button {
+				font-size: 14rem;
+				padding: 16rem 12rem 14rem;
+				border-radius: 14rem;
+			}
+		}
+
+		&__socials {
+			transform: translate(-10rem, 40rem);
+		}
+	}
+}
+
+@media only screen and (max-width: $xsmall) {
+	.header {
+		&__button {
+			.button {
+				font-size: 12rem;
+				padding: 14rem 12rem;
+			}
+		}
+
+		&__socials {
+			transform: translate(-10rem, 40rem);
 		}
 	}
 }

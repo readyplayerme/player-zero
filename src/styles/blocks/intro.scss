@@ -124,7 +124,7 @@
 		display: none;
 	}
 
-	&__button {
+	/* &__button {
 		.button {
 			min-width: 250rem;
 		}
@@ -132,7 +132,7 @@
 		&:nth-child(2) {
 			order: -1;
 		}
-	}
+	} */
 }
 
 @media only screen and (max-width: $small) {
@@ -195,10 +195,10 @@
 			}
 		}
 
-		&__button {
+		/* &__button {
 			&:nth-child(2) {
 				order: 0;
 			}
-		}
+		} */
 	}
 }
