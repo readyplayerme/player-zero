@@ -1,0 +1,35 @@
+.introducing {
+	overflow: hidden;
+
+	&__container {
+		background-image: url('/assets/covers/introducing.png');
+		background-size: cover;
+		height: 50vw;
+		position: relative;
+	}
+
+	&__title {
+		text-align: -webkit-center;
+		font-size: 180rem;
+		position: absolute;
+		top: 25%;
+		width: 100%;
+	}
+
+	&__image {
+		width: 75%;
+		margin-top: -50rem;
+
+		img {
+			transform: scale(1.1) translate(-5%, -140rem);
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.introducing {
+		&__title {
+			font-size: 80rem;
+		}
+	}
+}

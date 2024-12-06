@@ -9,6 +9,10 @@
     "engines": {
         "node": ">=20.15.1"
     },
+    "volta": {
+        "node": "20.15.1",
+        "npm": "10.9.1"
+    },
     "scripts": {
         "dev": "nodemon --config ./.ancros/nodemon.json --import jtsx-loader ./gulp.ancros.js dev",
         "debug": "nodemon --config ./.ancros/nodemon.json --import jtsx-loader ./gulp.ancros.js dev",
