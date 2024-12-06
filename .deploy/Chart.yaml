@@ -1,0 +1,9 @@
+apiVersion: v2
+name: playerzero-ui
+description: Helm chart of playerzero-ui
+type: application
+version: 0.1.0
+dependencies:
+  - name: rpm-application-deployment
+    version: "0.27.1"
+    repository: oci://421787948231.dkr.ecr.us-east-1.amazonaws.com

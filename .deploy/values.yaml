@@ -1,0 +1,301 @@
+rpm-application-deployment:
+  ## Number of replicas for the deployment. The desired number of identical pods that should be running simultaneously.
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset
+  replicaCount: 1
+
+  ## Container image configuration
+  image:
+    registry: 421787948231.dkr.ecr.us-east-1.amazonaws.com
+    tag: 0.16.0
+    pullPolicy: Always
+
+  ## Define a command or arguments for a container
+  ## For more information, refer to: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container
+  containerCommand: []
+
+  containerArgs: []
+
+  ## Container port configuration. Specifies the ports to open on the container.
+  containerPorts:
+    - name: api-port
+
+      # Protocol used for the port. Options: TCP, UDP, SCTP.
+      protocol: TCP
+
+      # Port number on the container to expose.
+      port: 8080
+    - name: ws-port
+
+      # Protocol used for the port. Options: TCP, UDP, SCTP.
+      protocol: TCP
+
+      # Port number on the container to expose.
+      port: 8000
+
+  ## Deployment annotations
+  deploymentAnnotations: {}
+
+  ## Deployment update strategy configuration
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+  deploymentUpdate:
+    # Type of update strategy for the Deployment. Options: RollingUpdate, Recreate.
+    type: RollingUpdate
+
+    # The maximum number of pods that can be scheduled over the desired replicas.
+    # Expressed as a percentage of the total number of replicas.
+    maxSurge: 25%
+
+    # The maximum number of pods that can be unavailable during the update process.
+    # Expressed as a percentage of the total number of replicas.
+    maxUnavailable: 25%
+
+  ## List of volumes to be used in the Pod.
+  ## You can define your persistent volumes here and then reference them in the "volumeMounts" section
+  ## PersistentVolumeClaim has to be created before using volumes in deployment
+  ## For more information, refer to: https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage
+  volumes:
+    []
+    # - name: test-pvc
+    #   persistentVolumeClaim:
+    #     claimName: test-pvc
+
+  ## List of volume mounts to be used in the container.
+  ## Mounts specified volumes into the container's file system.
+  volumeMounts:
+    []
+    # - name: test-pvc
+    #   mountPath: /tmp
+
+  ## Resource requests and limits for the container.
+  resources:
+    requests:
+      memory: '128Mi'
+      cpu: '50m'
+    limits:
+      memory: '1Gi'
+      cpu: '1000m'
+
+  ## Container probes to check the health of the application running in the container.
+  ## For more information, refer to: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes
+  containerProbes: {}
+    # # Startup probe checks the container's health during its startup period.
+    # startupProbe:
+    #   # The endpoint path for the startup probe.
+    #   path: /health
+
+    #   # The port on which the container exposes the startup probe. This can be describe as port number or name
+    #   port: api-port
+
+    #   # Number of consecutive failures required to consider the probe as failed.
+    #   failureThreshold: 30
+
+    #   # How often (in seconds) to perform the startup probe.
+    #   periodSeconds: 10
+
+    # # Liveness probe checks if the container is still running properly.
+    # livenessProbes:
+    #   # The endpoint path for the liveness probe.
+    #   path: /health
+
+    #   # The port on which the container exposes the liveness probe. This can be describe as port number or name
+    #   port: api-port
+
+    #   # Number of consecutive failures required to consider the probe as failed.
+    #   failureThreshold: 3
+
+    #   # How often (in seconds) to perform the liveness probe.
+    #   periodSeconds: 10
+
+    # # Readiness probe checks if the container is ready to receive traffic.
+    # readinessProbes:
+    #   # The endpoint path for the readiness probe.
+    #   path: /health
+
+    #   # The port on which the container exposes the readiness probe. This can be describe as port number or name
+    #   port: api-port
+
+    #   # Number of consecutive failures required to consider the probe as failed.
+    #   failureThreshold: 3
+
+    #   # How often (in seconds) to perform the readiness probe.
+    #   periodSeconds: 10
+
+  ## Pod affinity and anti-affinity configuration.
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+  affinity: {}
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #       - matchExpressions:
+  #         - key: app
+  #           operator: In
+  #           values:
+  #             - app-name
+  # podAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     - labelSelector:
+  #         matchExpressions:
+  #           - key: app-type
+  #             operator: In
+  #             values:
+  #             - redis
+
+  ## Topology spread constraints for pod placement.
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints
+  topologySpreadConstraints:
+    - maxSkew: 1
+      topologyKey: 'topology.kubernetes.io/zone'
+      whenUnsatisfiable: ScheduleAnyway
+      labelSelector:
+        matchLabels:
+          k8s-app: playerzero-ui
+
+  ## Labels to be added to the Pod.
+  podLabels:
+    type: frontend
+  # env: prod
+
+  ## Annotations for Pod
+  podAnnotations: {}
+
+  ## Environment variables to be set in the container.
+  containerEnv: []
+
+  # Load all environment variables from specified ConfigMap or Secret
+  containerEnvFrom: []
+
+  ## Node selector to specify which nodes the Pod should be scheduled on.
+  nodeSelector:
+    node-type: cpu-optimized
+
+  ## Tolerations for the Pod to tolerate specific node taints.
+  tolerations:
+    - key: node-type
+      operator: 'Equal'
+      value: 'cpu-optimized'
+      effect: 'NoSchedule'
+
+  ## PodDistributionBudget for deployment
+  ## For more information, refer to: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
+  pdb:
+    enabled: false
+
+    minAvailable: 1
+
+  # maxUnavailable: 90%
+
+  ## Deploment exposing section
+
+  ## Service configuration for exposing the application
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/services-networking/service
+  service:
+    type: ClusterIP
+
+    # Ports that the service should listen on
+    ports:
+      - protocol: TCP
+        port:
+          name: api-port
+          number: 8080
+        targetPort: api-port
+      - protocol: TCP
+        port:
+          name: ws-port
+          number: 8000
+        targetPort: ws-port
+
+  ## Ingress configuration for exposing the application. We use AWS ALB controller for automating the load balancer creation
+  ## Ingress rules are synced with the service created before.
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/services-networking/ingress
+  ## For more information about AWS ALB annotations, refer to: https://kubernetes-sigs.github.io/aws-load-balancer-controller
+  ingress:
+    enabled: true
+    annotations:
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
+      alb.ingress.kubernetes.io/healthcheck-path: /health
+      alb.ingress.kubernetes.io/ssl-redirect: '443'
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:421787948231:certificate/384f44f3-1d97-44f4-a2a1-e739a7cb68c2
+    labels: {}
+    paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: playerzero-ui
+            port:
+              name: api-port
+      # - path: /
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: playerzero-ui
+      #       port:
+      #         name: ws-port
+      - path: /refresh-cache
+        pathType: Prefix
+        backend:
+          service:
+            name: playerzero-ui
+            port:
+              name: api-port
+      - path: /api/send
+        pathType: Prefix
+        backend:
+          service:
+            name: playerzero-ui
+            port:
+              name: api-port
+
+  ## Horizontal Pod Autoscaler (HPA) configuration for automatically adjusting the number of replicas based on resource metrics.
+  ## For more information, refer to: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale
+  hpa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 3
+
+    # Custom metrics or resource-based metrics for autoscaling (if any).
+    metrics:
+      - type: Resource
+        resource:
+          name: cpu
+          target:
+            type: Utilization
+            averageUtilization: 60
+
+    # Policies how to scale down deployment with HPA
+    scalingBehaviors:
+      scaleDown:
+        {}
+        # stabilizationWindowSeconds: 300
+        # policies: []
+        # Example: Maximum of 1 pod can be removed in 60 seconds time period
+        # - type: Pods
+        #   value: 1
+        #   periodSeconds: 60
+
+      scaleUp:
+        {}
+        # stabilizationWindowSeconds: 0
+        # policies: []
+        # Example: Maximum of 4 pods can be added in 15 seconds time period
+        # - periodSeconds: 15
+        #   type: Pods
+        #   value: 4
+
+  ## Deployment addons section
+
+  ## ConfigMap to be created. Can be useful if you would like to refer to configMap in deployment
+  configMap:
+    annotations: {}
+    data: {}
+
+  ## PersistentVolumeClaim
+  ## We have preconfigured storageClass in our cluster, so in order to use persistence just configure persistentVolumeClaim.
+  ## Available storageClasses are gp2 and gp2-encrypted
+  ## For more information, refer to: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+  persistentVolumeClaim: {}
+  #   accessModes: ReadWriteMany
+  #   storageClassName: gp2-encrypted
+  #   storage: 2Gi
