@@ -81,7 +81,7 @@ export default async ({ data }) => {
                                     <div class="intro__line"></div>
 
                                     <div class="intro__button explore-on-opensea">
-                                        <a href="https://opensea.io/collection/collection-zero-by-player-zero" target="_blank" class="button button--border"><span>Explore GENESIS on OpenSea</span></a>
+                                        <a href="https://opensea.io/collection/genesis-by-player-zero" target="_blank" class="button button--border"><span>Explore GENESIS on OpenSea</span></a>
                                         {/* <button class="button button--border" type="button" data-elt="showFormAnim">Notify Me</button> */}
                                     </div>
                                 </div>
