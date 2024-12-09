@@ -62,11 +62,6 @@ const Header = ({children, data}) => {
 				</div>
 
                 <div class="header__controls">
-                    <div class="header__button">
-                        <a href="https://playerzero.readyplayer.me" target="_blank" class="button"><span>Launch The App</span></a>
-                        {/* <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button> */}
-                    </div>
-
                     <div class="header__socials">
                         <div class="socials">
                             <a href="https://x.com/weareplayerzero" class="socials__link" target="_blank">

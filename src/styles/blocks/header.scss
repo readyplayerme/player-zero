@@ -44,7 +44,6 @@
 
 	&__socials {
 		text-align: center;
-		transform: translateY(60rem);
 		line-height: 0;
 	}
 
@@ -130,7 +129,7 @@
 		}
 
 		&__socials {
-			transform: translate(-35rem, 60rem);
+			transform: translate(-35rem);
 		}
 
 		&__button {
@@ -165,7 +164,7 @@
 		}
 
 		&__socials {
-			transform: translate(-10rem, 40rem);
+			transform: translate(-10rem);
 		}
 	}
 }
@@ -180,7 +179,7 @@
 		}
 
 		&__socials {
-			transform: translate(-10rem, 40rem);
+			transform: translate(-10rem);
 		}
 	}
 }

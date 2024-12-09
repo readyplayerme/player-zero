@@ -1,0 +1,132 @@
+.zero {
+	overflow: hidden;
+	margin-top: 140rem;
+
+	&__container {
+		@include grid-container();
+	}
+
+	&__top {
+		margin-bottom: 140rem;
+	}
+
+	&__main {
+		position: relative;
+		margin: 100rem 0 -140rem;
+	}
+
+	&__image {
+		width: 75%;
+		margin-top: -50rem;
+
+		img {
+			transform: scale(0.8) translate(65%, -180rem);
+		}
+	}
+
+	&__message {
+		position: absolute;
+		left: 0;
+		top: 5%;
+		width: 45%;
+		max-width: 532rem;
+	}
+
+	&__button {
+		text-align: center;
+	}
+}
+
+.zero-message {
+	display: flex;
+	width: 100%;
+
+	&__main {
+		padding: 0 12%;
+		display: flex;
+		flex-direction: column;
+		gap: 24rem;
+	}
+
+	&__line {
+		flex-shrink: 0;
+		width: 12rem;
+		border-color: $white100;
+		border-style: solid;
+
+		&--left {
+			border-width: 2rem 0 2rem 2rem;
+		}
+
+		&--right {
+			border-width: 2rem 2rem 2rem 0;
+		}
+	}
+
+	&__icon {
+		color: $yellow;
+
+		.svg-icon {
+			width: 64rem;
+			height: auto;
+		}
+	}
+
+	&__descr {
+		@include h5();
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.zero {
+		margin-top: 100rem;
+
+		&__top {
+			margin-bottom: 32rem;
+		}
+
+		&__main {
+			margin: 32rem 0;
+		}
+
+		&__message {
+			position: static;
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&__image {
+			width: 100%;
+			margin: 0;
+
+			img {
+				transform: scale(1.2) translate(0, 60rem);
+			}
+		}
+	}
+
+	.zero-message {
+		&__main {
+			gap: 20rem;
+			padding: 0 12rem;
+		}
+
+		&__icon {
+			.svg-icon {
+				width: 40rem;
+			}
+		}
+
+		&__text {
+			order: -1;
+		}
+	}
+}
+
+@media only screen and (max-width: $xxsmall) {
+	.zero {
+		&__text {
+			max-width: 100%;
+		}
+	}
+}

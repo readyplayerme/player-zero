@@ -1,0 +1,190 @@
+.genesis {
+	overflow: hidden;
+
+	&__container {
+		@include grid-container();
+	}
+
+	&__top {
+		margin-bottom: 140rem;
+	}
+
+	&__title {
+		text-align: center;
+
+		img {
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+
+	&__main {
+		position: relative;
+		margin: 60rem 0 0rem;
+		display: flex;
+	}
+
+	&__video {
+		img {
+			border-radius: 16px;
+		}
+	}
+
+	&__message {
+		&.redefined {
+			align-self: flex-end;
+		}
+	}
+
+	&__bottom-line-left {
+		display: flex;
+    padding: 0 6% 35px 12%;
+
+		&-top {
+			border-top: 1px solid white;
+			flex-grow: 1;
+		}
+
+		&-chamfer {
+			border-top: 1px solid white;
+			width: 22px;
+			transform: rotate(45deg) translate(3px, 8px);			// display: flex;
+		}
+	}
+
+	&__bottom-line-right {
+		display: flex;
+    padding: 0 12% 35px 6%;
+		height: 20px;
+
+		&-top {
+			border-top: 1px solid white;
+			flex-grow: 1;
+		}
+
+		&-chamfer {
+			border-top: 1px solid white;
+			width: 22px;
+			transform: rotate(-45deg) translate(-3px, 8px);			// display: flex;
+		}
+	}
+}
+
+.genesis-message {
+	display: flex;
+	width: 100%;
+
+	&__main {
+		padding: 0 12%;
+		display: flex;
+		flex-direction: column;
+		gap: 24rem;
+	}
+
+	&__line {
+		flex-shrink: 0;
+		width: 12rem;
+		border-color: $white100;
+		border-style: solid;
+
+		&--left {
+			border-width: 2rem 0 2rem 2rem;
+		}
+
+		&--right {
+			border-width: 2rem 2rem 2rem 0;
+		}
+	}
+
+	&__icon {
+		color: $yellow;
+
+		.svg-icon {
+			width: 64rem;
+			height: auto;
+		}
+	}
+
+	&__descr {
+		@include h5();
+	}
+
+	&__text {
+		strong {
+			font-weight: bold;
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.genesis {
+		&__main {
+			flex-direction: column;
+		}
+	}
+}
+
+@media only screen and (min-width: $small) {
+	.genesis-message__text {
+		padding-bottom: 20px;
+	}
+
+	.col-4 {
+		flex: 0 0 33.33%;
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.genesis {
+		&__top {
+			margin-bottom: 32rem;
+		}
+
+		&__message {
+			margin-top: 24rem;
+			margin-bottom: 24rem;
+		}
+
+		&__video {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	.genesis-message {
+		&__main {
+			gap: 20rem;
+			padding: 0 12rem;
+		}
+
+	// 	&__icon {
+	// 		.svg-icon {
+	// 			width: 40rem;
+	// 		}
+	// 	}
+
+	// 	&__text {
+	// 		order: -1;
+	// 	}
+	}
+}
+
+@media only screen and (max-width: $xxsmall) {
+	.genesis {
+		&__text {
+			max-width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: $small) {
+	.hide-for-small {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: $small) {
+	.hide-after-small {
+		display: none;
+	}
+}

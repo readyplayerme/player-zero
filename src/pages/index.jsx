@@ -38,6 +38,7 @@ export default async ({ data }) => {
                         <div class="intro__wrap" data-elts="accordionBox">
                             <div class="intro__main">
                                 <h1 class="intro__title">AVATAR COLLECTIBLE PLATFORM</h1>
+                                <h5 class="intro__subtitle">Our newest collection <span class="genesis">GENESIS</span> now minting on OpeanSea</h5>
 
                                 <div class="intro__countdown">
                                     <div class="countdown">
@@ -60,9 +61,13 @@ export default async ({ data }) => {
                             </div>
 
                             <div className="intro__bottom">
+                                <div class="intro__button">
+                                    <a href="https://playerzero.readyplayer.me" target="_blank" class="button"><span>Launch The App</span></a>
+                                    {/* <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button> */}
+                                </div>
 
                                 <div class="intro__controls">
-                                    <div class="intro__button">
+                                    <div class="intro__button play-trailer">
                                         <button class="button-play" data-elts="popupBtn" data-popup="video">
                                             <i></i>
                                             {/* <svg class="svg-icon svg-icon--icon" viewBox="0 0 105 43" width="105" height="43"><use xlink:href="#svg-play-icon"></use></svg>
@@ -73,13 +78,10 @@ export default async ({ data }) => {
                                         {/* <div class="intro__line"></div> */}
                                     </div>
 
-                                    <div class="intro__button">
-                                        <a href="https://playerzero.readyplayer.me" target="_blank" class="button"><span>Launch The App</span></a>
-                                        {/* <button class="button" data-elts="popupBtn" data-popup="video">Play Trailer</button> */}
-                                    </div>
+                                    <div class="intro__line"></div>
 
-                                    <div class="intro__button">
-                                        <a href="https://opensea.io/collection/collection-zero-by-player-zero" target="_blank" class="button button--border"><span>Explore on OpenSea</span></a>
+                                    <div class="intro__button explore-on-opensea">
+                                        <a href="https://opensea.io/collection/genesis-by-player-zero" target="_blank" class="button button--border"><span>Explore GENESIS on OpenSea</span></a>
                                         {/* <button class="button button--border" type="button" data-elt="showFormAnim">Notify Me</button> */}
                                     </div>
                                 </div>
@@ -111,16 +113,129 @@ export default async ({ data }) => {
                     </div>
                 </section>
 
-                <section class="homepage" id="homepage">
-                    <div class="homepage__container">
-                        <div class="homepage__wrap">
-                            <div class="homepage__top">
+                <section class="introducing" id="introducing">
+                    <div class="introducing__container">
+                        <div class="introducing__main">
+                            <div>
+                                <h1 class="introducing__title">Introducing...</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="genesis" id="genesis">
+                    <div class="genesis__container">
+                        <div class="genesis__wrap">
+                            <div class="genesis__top">
                                 <div class="decor">
                                     <div class="decor__line"></div>
                                     <div class="decor__circle"></div>
                                 </div>
                             </div>
 
+                            <h2 class="genesis__title">
+                                <img src="/assets/images/genesis.png" />
+                            </h2>
+
+                            <div class="genesis__main">
+                                <div class="genesis__message exclusive col-4">
+                                    <div class="genesis-message">
+                                        <div class="homepage-message__line homepage-message__line--left hide-after-small"></div>
+
+                                        <div className="genesis-message__main">
+                                            <div class="genesis-message__icon">
+                                                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64"><use xlink:href="#svg-point-up"></use></svg>
+                                            </div>
+
+                                            <div class="genesis-message__descr">Our most exclusive collection</div>
+
+                                            <div class="genesis-message__text">Our most exclusive and premium collection, <strong>GENESIS</strong> features 3,000 avatar wearable packs with unique items created by the wildest of imaginations. Holders of GENESIS collectibles will get exclusive access to future PlayerZero drops, along with early beta access to product features, games, and so much more.</div>
+                                        </div>
+
+                                        <div class="homepage-message__line homepage-message__line--right hide-after-small"></div>
+                                    </div>
+
+                                    <div class="genesis__bottom-line-left hide-for-small">
+                                        <div class="genesis__bottom-line-left-top"></div>
+                                        <div class="genesis__bottom-line-left-chamfer"></div>
+                                    </div>
+                                </div>
+
+                                <div class="genesis__video col-4">
+                                    <img src="/assets/videos/hype-man.gif" />
+                                </div>
+
+                                <div class="genesis__message redefined col-4">
+                                    <div class="genesis-message">
+                                        <div class="homepage-message__line homepage-message__line--left hide-after-small"></div>
+
+                                        <div className="genesis-message__main">
+                                            <div class="genesis-message__icon">
+                                                <svg class="svg-icon" viewBox="0 0 24 24" width="64" height="64"><use xlink:href="#svg-star"></use></svg>
+                                            </div>
+
+                                            <div class="genesis-message__descr">Wearables redefined</div>
+
+                                            <div class="genesis-message__text">Created by artists with years of experience building game titles like Fall Guys, <strong>GENESIS</strong> features our most thoughtfully crafted avatar wearables to date. It’s time to take your avatar to the next level.</div>
+                                        </div>
+
+                                        <div class="homepage-message__line homepage-message__line--right hide-after-small"></div>
+                                    </div>
+
+                                    <div class="genesis__bottom-line-right hide-for-small">
+                                        <div class="genesis__bottom-line-right-chamfer"></div>
+                                        <div class="genesis__bottom-line-right-top"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="zero" id="zero">
+                    <div class="zero__container">
+                        <div class="zero__wrap">
+                            <h2 class="zero__title">Previous collections</h2>
+
+                            <div class="zero__main">
+                                <div class="zero__message">
+                                    <div class="zero-message">
+                                        <div class="zero-message__line zero-message__line--left"></div>
+
+                                        <div className="zero-message__main">
+                                            <div class="zero-message__icon">
+                                                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64"><use xlink:href="#svg-zero"></use></svg>
+                                            </div>
+
+                                            <div class="zero-message__text">Collection ZERO is PlayerZero’s inaugural avatar wearable collection, featuring designs that are inspired by streetwear and pop culture. With emphasis on day zero utility, all PlayerZero avatar wearables are immediately usable on PlayerZero avatars and in games. Over 81,000 Collection ZERO packs were sold during launch day, with 24,000+ unique holders globally.</div>
+
+                                            <div class="zero-message__descr">
+                                                <div class="zero__button explore-on-opensea">
+                                                    <a href="https://opensea.io/collection/collection-zero-by-player-zero" target="_blank" class="button"><span>Explore collection ZERO</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="zero-message__line zero-message__line--right"></div>
+                                    </div>
+                                </div>
+
+                                <div class="zero__image">
+                                    {/* <svg class="svg-icon" viewBox="0 0 160 160" width="160" height="160"><use xlink:href="#svg-large-star"></use></svg>
+                                    <svg class="svg-icon" viewBox="0 0 260 260" width="260" height="260"><use xlink:href="#svg-large-point-up"></use></svg>
+                                    <svg class="svg-icon" viewBox="0 0 524 524" width="524" height="524"><use xlink:href="#svg-large-dot"></use></svg>
+                                    <img src="/assets/images/zero/girl.png" alt="" />
+                                    <img src="/assets/images/zero/boy.png" alt="" /> */}
+                                    <img src="/assets/images/zero/zero.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="homepage" id="homepage">
+                    <div class="homepage__container">
+                        <div class="homepage__wrap">
                             <h2 class="homepage__title">One identity. Every universe. your avatar everywhere.</h2>
 
                             <div class="homepage__main">
